@@ -13,7 +13,7 @@ export default function Page() {
       highlight: "80% warmteverlies? Dat stopt aan de buitenkant.",
       text: "Oudere woningen verliezen het meeste warmte via dak, gevels en vensters. Een gerichte aanpak pakt dit bij de bron aan en levert onmiddellijk resultaat.",
       button: "Plan een adviesgesprek in",
-      image: "/images/renovatie/image-2.png",
+      image: "/images/renovatie/image-3.png",
       list: {
         title: "Concrete voordelen",
         subtitle: "Eén investering. Jarenlang rendement.",
@@ -32,7 +32,7 @@ export default function Page() {
       highlight: "Word jij ook zelfvoorzienend?",
       text: "Zonnepanelen, batterijen en warmtepompen worden steeds toegankelijker. Samen bekijken we wat de beste oplossing dat past bij jouw situatie.",
       button: "Vraag een offerte aan",
-      image: "/images/renovatie/image-3.png",
+      image: "/images/renovatie/image-2.png",
       list: {
         title: "Wat het oplevert",
         subtitle: "Investeer nu. Bespaar jarenlang.",
@@ -40,15 +40,15 @@ export default function Page() {
           "60-80% reductie in energiekosten",
           "Onafhankelijk van stijgende energieprijzen",
           "Verwarming én koeling in één systeem",
-          "Slimme sturingssystemen (laden op goedkope momenten)",
+          "Slimme sturingssystemen",
         ],
       },
     },
 
     {
       title: "Totaal oplossingen",
-      highlight: "Meerdere werken? Wij nemen de efficiëntste route.",
-      text: "Transparante communicatie, vaste contactpersonen en topservice: dát is wat je van ons mag verwachten..",
+      highlight: "Wil je meerdere projecten combineren? Wij nemen de efficiëntste route.",
+      text: "Wij zorgen voor de efficiëntste planning. Je krijgt transparante communicatie, een vaste contactpersoon en topservice waar je op kunt rekenen.",
       button: "Bespreek uw totaalrenovatie",
       image: "/images/renovatie/image-4.png",
       list: {
@@ -84,7 +84,7 @@ export default function Page() {
             />
           </div>
           <div className="bg-line w-full h-px block lg:hidden"></div>
-          <div className="w-full lg:max-w-[40%] py-16 lg:py-[45px]">
+          <div className="w-full py-16 lg:py-[45px]">
             <h3 className="mb-6 lg:mb-12">Waarom renoveren?</h3>
             <p className="text-[16px] md:text-[24px] mb-[54px] md:mb-12">
               Een renovatie biedt direct tastbare voordelen: lagere
@@ -108,7 +108,7 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="text-center flex flex-col items-center">
             <DotText text="onze diensten" />
-            <h2 className="mb-12 lg:mb-[60px]">Ontdek onze diensten</h2>
+            <h2 className="mb-12 lg:mb-[60px]">Wat we voor jou doen</h2>
           </div>
 
           <div className="flex flex-col">
