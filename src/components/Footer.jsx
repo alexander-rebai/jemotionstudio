@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import ApplicationLogo from "./ApplicationLogo";
 import ArrowButton from "./ArrowButton";
@@ -7,7 +7,7 @@ import Contacts from "./Contacts";
 
 const Footer = () => {
   return (
-    <footer className="bg-bgBlack-200 neue-montreal-text text-sm">
+    <footer className="bg-bgBlack-200 neue-montreal-text text-sm relative">
       <div className="flex flex-col md:flex-row gap-12 pb-12 md:pb-24 px-4 md:px-16 pt-16 md:pt-30 ">
         <div className="w-full">
           <div className="max-md:hidden mb-16">
@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="max-md:block hidden mb-16">
             <ApplicationLogo height={"100%"} width={"100%"} />
           </div>
-          <form className="max-w-[456px]">
+          {/* <form className="max-w-[456px]">
             <input
               type="email"
               placeholder="E-mailadres"
@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="mt-12">
               <ArrowButton text="Abonneer je nu" />
             </div>
-          </form>
+          </form> */}
         </div>
         <div className="w-full grid grid-cols-2 gap-x-6 md:gap-x-[60px] gap-y-12">
           {/* Koppelingen */}
@@ -145,10 +145,16 @@ const Footer = () => {
       </div>
       <div className="px-0 md:px-16 py-8 text-textLight border-t border-t-line flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 text-center">
         <p>Alle rechten voorbehouden door renovise 2025</p>
-        <p className="cursor-pointer" onClick={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}>Terug naar boven</p>
+        <p
+          className="cursor-pointer"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          Terug naar boven
+        </p>
       </div>
+      <span className="text-textLight absolute bottom-8 right-1/2 -translate-x-1/2">BE1020.949.150</span>
     </footer>
   );
 };
