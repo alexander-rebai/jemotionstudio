@@ -27,9 +27,14 @@ export default function Page() {
       image: "/images/home/slider-2.png",
     },
     {
-      title: "tes test test",
-      subtitle: "Minder warmteverlies, meer comfort en stijl",
-      image: "http://via.placeholder.com/530x320",
+      title: "Energie en technieken",
+      subtitle: "Zonnepanelen, thuisbatterijen en warmtepompen",
+      image: "/images/home/slider-3.jpeg",
+    },
+    {
+      title: "Totaal oplossingen",
+      subtitle: "Volledige ontzorging van A tot Z",
+      image: "/images/home/slider-4.jpeg",
     },
   ];
 
@@ -41,22 +46,22 @@ export default function Page() {
         "Duidelijke afspraken, één aanspreekpunt en vakmannen die weten wat ze doen.\n\nDaarom werken we anders: samen bekijken we de mogelijkheden,begeleiden we elk detail en maken we van jouw renovatie een zorgeloostraject.",
     },
     {
-      title: "Met welke vakmensen werken jullie?",
-      highlight: "Omdat wij de sleutel bieden tot een zorgeloze renovatie.",
+      title: "Zijn jullie aannemers of coördineren jullie alleen?",
+      highlight: "Wij zijn aannemer én coördineren alles.",
       content:
-        "Duidelijke afspraken, één aanspreekpunt en vakmannen die weten wat ze doen.\n\nDaarom werken we anders: samen bekijken we de mogelijkheden,begeleiden we elk detail en maken we van jouw renovatie een zorgeloostraject.",
+        "Als hoofdaannemer nemen we de volledige verantwoordelijkheid voor jullie project: van planning tot oplevering. Voor de uitvoering werken we met ons netwerk van vakspecialisten – van dakwerker tot installateur – maar jullie hoeven maar één nummer te onthouden: het onze.",
     },
     {
-      title: "Heb ik zelf een architect nodig?",
-      highlight: "Omdat wij de sleutel bieden tot een zorgeloze renovatie.",
+      title: "Heb ik een architect nodig?",
+      highlight: "Soms wel, soms niet.",
       content:
-        "Duidelijke afspraken, één aanspreekpunt en vakmannen die weten wat ze doen.\n\nDaarom werken we anders: samen bekijken we de mogelijkheden,begeleiden we elk detail en maken we van jouw renovatie een zorgeloostraject.",
+        "Bij grote ingrepen is een architect wettelijk verplicht, bij kleinere zaken niet. We bekijken samen wat voor jouw project nodig is en regelen de juiste begeleiding.",
     },
     {
       title: "Welke garanties krijg ik?",
-      highlight: "Omdat wij de sleutel bieden tot een zorgeloze renovatie.",
+      highlight: "De standaard wettelijke garanties op materialen en plaatsing.",
       content:
-        "Duidelijke afspraken, één aanspreekpunt en vakmannen die weten wat ze doen.\n\nDaarom werken we anders: samen bekijken we de mogelijkheden,begeleiden we elk detail en maken we van jouw renovatie een zorgeloostraject.",
+        "Heldere afspraken die we nakomen en vakmensen die weten wat ze doen.",
     },
   ];
 
@@ -190,8 +195,8 @@ export default function Page() {
   return (
     <div>
       {/* hero  */}
-      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center home-hero">
-        <div className="text-center flex flex-col items-center justify-center">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center 2xl:items-start justify-center home-hero 2xl:px-46">
+        <div className="2xl:text-start text-center flex flex-col 2xl:items-start items-center justify-center">
           <h1 className="mb-[42px]">
             Jouw renovatie. <br /> Eén vertrouwde partner.
           </h1>
@@ -245,20 +250,24 @@ export default function Page() {
             />
           </div>
           <div className="bg-line w-full h-px block lg:hidden"></div>
-          <div className="w-full lg:max-w-[40%]">
+          <div className="w-full">
             <DotText text={"over ons"} />
             <p className="text-[16px] md:text-[24px] mb-[54px] md:mb-12">
-              Wil je meer dan enkel een deelrenovatie? Dan bekijken we samen het
-              hele plaatje: van badkamers en keukens tot interieur en zelfs
-              tuinen.
+              Renovise is jouw ervaren aannemer in renovatie en
+              energieoplossingen
               <br />
               <br />
-              Renovise coördineert alles zodat elk onderdeel perfect bij elkaar
-              past.{" "}
+              We nemen het hele traject uit handen, van gerichte deelrenovaties
+              tot complete totaaloplossingen. We zorgen voor de volledige
+              coördinatie: planning, opvolging én vakkundige uitvoering door
+              betrouwbare vakmensen.
+              <br />
+              <br />
               <span className="text-textLight">
-                Met één aanspreekpunt en een doordacht traject bouwen we aan een
-                woning die stijgt in comfort, daalt in energieverbruik en
-                futureproof is voor de komende generaties.
+                Met Renovise heb je één aanspreekpunt dat zorgt voor een vlot en
+                zorgeloos traject. Het resultaat: een comfortabele,
+                energiezuinige en toekomstbestendige woning die in waarde
+                stijgt.
               </span>
             </p>
             <ArrowButton text="Ontdek meer over ons" href="/over-ons" />
@@ -306,7 +315,10 @@ export default function Page() {
                 Van gerichte ingrepen of upgrades tot volledige transformaties:
                 ontdek welke oplossing past bij jouw plannen.
               </p>
-              <ArrowButton text="Bekijk alle mogelijkheden" href="/realisaties" />
+              <ArrowButton
+                text="Bekijk alle mogelijkheden"
+                href="/realisaties"
+              />
               <div id="desktop-buttons" className="splide__arrows mt-auto">
                 <button
                   className="splide__arrow splide__arrow--prev bg-transparent"
@@ -573,7 +585,7 @@ export default function Page() {
             <img
               src="/images/home/image-2.png"
               alt="Jij droomt, wij realiseren"
-              className="w-full h-full"
+              className="w-full h-full 2xl:h-[610px]"
             />
           </div>
         </div>
@@ -583,11 +595,7 @@ export default function Page() {
       <section className="bg-black-200">
         <div className="w-full h-full bg-[url('/images/home/arrows-bg-mobile.png')] md:bg-[url('/images/home/arrows-bg.png')] bg-no-repeat bg-top bg-contain">
           <div className="container mx-auto">
-            <div className="flex items-center justify-center max-md:py-[100px] md:min-h-[50vh]">
-              <h5 className="text-[24px] md:text-[36px] leading-[48px] text-center">
-                <span className="italic">Échte</span> vakmensen en topmerken
-              </h5>
-            </div>
+            <div className="flex items-center justify-center max-md:py-[100px] md:min-h-[50vh]"/>
             {/* logos slider */}
             <div className="pb-12 md:pb-[96px]">
               <Splide
@@ -630,7 +638,10 @@ export default function Page() {
       </section>
 
       {/* form section */}
-      <div className="container mx-auto pb-0 pt-[100px] md:py-[140px]" id="contact-form">
+      <div
+        className="container mx-auto pb-0 pt-[100px] md:py-[140px]"
+        id="contact-form"
+      >
         <div className="flex flex-col lg:flex-row lg:gap-[150px]">
           <div className="w-full px-4 md:px-16">
             <DotText text={"contact opnemen"} />
@@ -644,7 +655,7 @@ export default function Page() {
               <Contacts />
             </div>
           </div>
-          <div className="w-full max-lg:bg-[#151515] px-4 md:px-16 max-lg:pt-[60px] max-lg:pb-[100px]" >
+          <div className="w-full max-lg:bg-[#151515] px-4 md:px-16 max-lg:pt-[60px] max-lg:pb-[100px]">
             <ContactForm />
           </div>
         </div>

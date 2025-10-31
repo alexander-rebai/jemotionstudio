@@ -23,8 +23,8 @@ const AccordionItem = ({
           <div className="bg-primary w-0.5 h-[56px]"></div>
           <div className="flex flex-col justify-center gap-1">
             <h6>200+</h6>
-            <p className="neue-montreal-text text-[10px]">
-              huiseigenaren kozen al eerder voor Renovise{" "}
+            <p className="neue-montreal-text text-[10px] lg:text-[14px]">
+             tevreden opdrachtgevers{" "}
             </p>
           </div>
         </div>
