@@ -21,17 +21,17 @@ export default function Page() {
     {
       title: "Heldere communicatie & begeleiding",
       content:
-        "Onze passie begint bij jouw verhaal. We starten met een persoonlijk gesprek, luisteren naar je wensen en vertalen die naar een renovatietraject op maat met oog voor esthetiek, energie-efficiëntie én wooncomfort.",
+        "Bij Renovise sta jij altijd centraal. We houden je tijdens elke fase van de renovatie op de hoogte en zorgen voor duidelijke afspraken. Zo weet je precies waar je aan toe bent en kan je rekenen op transparante communicatie en een vlotte opvolging.",
     },
     {
       title: "Garantie en duurzame samenwerking",
       content:
-        "Onze passie begint bij jouw verhaal. We starten met een persoonlijk gesprek, luisteren naar je wensen en vertalen die naar een renovatietraject op maat met oog voor esthetiek, energie-efficiëntie én wooncomfort.",
+        "Wij bouwen aan langdurige relaties, niet aan snelle projecten. Met kwaliteitsmaterialen, ervaren vakmannen en waterdichte garanties bieden we je zekerheid op lange termijn. Zo geniet je niet alleen vandaag, maar ook morgen van een zorgeloze renovatie.",
     },
     {
       title: "Expertise & coördinatie op maat",
       content:
-        "Onze passie begint bij jouw verhaal. We starten met een persoonlijk gesprek, luisteren naar je wensen en vertalen die naar een renovatietraject op maat met oog voor esthetiek, energie-efficiëntie én wooncomfort.",
+        "Een renovatie vraagt om meer dan alleen vakmanschap: het vraagt om een totaalaanpak. Onze experts coördineren elk aspect van je project.",
     },
   ];
 
@@ -162,10 +162,11 @@ export default function Page() {
   return (
     <div className="bg-bgBlack-100">
       <section className="pt-[56px] md:pt-[115px] px-4">
-        <div className="container mx-auto flex flex-col items-center justify-center text-center py-16 md:py-[86px]">
+        <div className="container mx-auto flex flex-col items-center md:items-start justify-center md:text-start text-center py-16 md:py-[86px]">
           <h1 className="mb-7 lg:mb-[42px] max-w-[1000px]">
-            Renoveren met visie én{" "}
-            <span className="italic">persoonlijke touch</span>
+            Renoveren
+            <br />
+            met onze <span className="italic">persoonlijke touch</span>
           </h1>
           <p className="text-xs leading-[160%] md:text-sm md:leading-[22px] neue-montreal-text">
             Renovise. Waar advies, stijl en vakmanschap samenkomen.

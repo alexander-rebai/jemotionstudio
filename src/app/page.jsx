@@ -195,8 +195,22 @@ export default function Page() {
   return (
     <div>
       {/* hero  */}
-      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center 2xl:items-start justify-center home-hero 2xl:px-46">
-        <div className="2xl:text-start text-center flex flex-col 2xl:items-start items-center justify-center">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center home-hero md:px-46">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/images/home/hero.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Overlay for better text readability (optional) */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        
+        <div className="md:text-start text-center flex flex-col md:items-start items-center justify-center z-20 relative">
           <h1 className="mb-[42px]">
             Jouw renovatie. <br /> Eén vertrouwde partner.
           </h1>
@@ -208,7 +222,7 @@ export default function Page() {
         </div>
 
         <div
-          className="absolute max-md:w-full max-md:justify-center bottom-[25px] md:bottom-[42px] md:right-16 flex gap-4 items-center"
+          className="absolute max-md:w-full max-md:justify-center bottom-[25px] md:bottom-[42px] md:right-16 flex gap-4 items-center z-20 cursor-pointer"
           onClick={() => {
             const el = document.querySelector("#section-2");
             if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -217,7 +231,7 @@ export default function Page() {
           <span className="neue-montreal-text text-xs uppercase">
             Scroll Down
           </span>
-          <div className="w-6 h-6 bg-white flex items-center justify-center rounded-full cursor-pointer">
+          <div className="w-6 h-6 bg-white flex items-center justify-center rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="7"
@@ -585,7 +599,7 @@ export default function Page() {
             <img
               src="/images/home/image-2.png"
               alt="Jij droomt, wij realiseren"
-              className="w-full h-full 2xl:h-[610px]"
+              className="w-full h-full md:h-[610px]"
             />
           </div>
         </div>

@@ -145,6 +145,8 @@ const Footer = () => {
       </div>
       <div className="px-0 md:px-16 py-8 text-textLight border-t border-t-line flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 text-center">
         <p>Alle rechten voorbehouden door renovise 2025</p>
+        <span className="text-textLigh">BE1020.949.150</span>
+
         <p
           className="cursor-pointer"
           onClick={() => {
@@ -154,7 +156,6 @@ const Footer = () => {
           Terug naar boven
         </p>
       </div>
-      <span className="text-textLight absolute bottom-8 right-1/2 -translate-x-1/2">BE1020.949.150</span>
     </footer>
   );
 };
