@@ -10,11 +10,15 @@ import ReviewItem from "@/components/ReviewItem";
 import SliderSlide from "@/components/SliderSlide";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Page() {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const sliderRef = useRef();
+  const [reviews, setReviews] = useState([]);
+  const [averageRating, setAverageRating] = useState(4.9);
+  const [totalReviews, setTotalReviews] = useState(120);
+  const [isLoadingReviews, setIsLoadingReviews] = useState(true);
   const slides = [
     {
       title: "Dak- en gevelwerken",
@@ -140,32 +144,33 @@ export default function Page() {
     },
   ];
 
-  const reviews = [
-    {
-      image: "https://placehold.co/100x100",
-      name: "Jan Peeters",
-      text: "We werken al een tijdje samen en de communicatie verloopt altijd vlot en professioneel. Altijd bereikbaar en denken echt mee met de klant.",
-      date: "September 18",
-    },
-    {
-      image: "https://placehold.co/100x100",
-      name: "Sophie Willems",
-      text: "Heel vriendelijk team dat weet wat ze doen. Alles werd duidelijk uitgelegd en snel opgevolgd. Echt een aanrader voor iedereen die kwaliteit zoekt.",
-      date: "November 22",
-    },
-    {
-      image: "https://placehold.co/100x100",
-      name: "Jan Peeters",
-      text: "We werken al een tijdje samen en de communicatie verloopt altijd vlot en professioneel. Altijd bereikbaar en denken echt mee met de klant.",
-      date: "September 18",
-    },
-    {
-      image: "https://placehold.co/100x100",
-      name: "Sophie Willems",
-      text: "Heel vriendelijk team dat weet wat ze doen. Alles werd duidelijk uitgelegd en snel opgevolgd. Echt een aanrader voor iedereen die kwaliteit zoekt.",
-      date: "November 22",
-    },
-  ];
+  useEffect(() => {
+    async function fetchReviews() {
+      try {
+        setIsLoadingReviews(true);
+        const response = await fetch("/api/reviews");
+        
+        if (!response.ok) {
+          throw new Error("Failed to fetch reviews");
+        }
+        
+        const data = await response.json();
+        
+        if (data.reviews && data.reviews.length > 0) {
+          setReviews(data.reviews);
+          setAverageRating(data.averageRating || 4.9);
+          setTotalReviews(data.totalReviews || 0);
+        }
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+        // Keep empty array on error - component will handle gracefully
+      } finally {
+        setIsLoadingReviews(false);
+      }
+    }
+
+    fetchReviews();
+  }, []);
 
   const logos = [
     "/images/logos/slider-logo-1.png",
@@ -468,119 +473,140 @@ export default function Page() {
         <div className="flex flex-col items-center">
           <DotText text="Google Reviews" />
           <h2 className="mb-12 lg:mb-16">Wat onze klanten zeggen</h2>
-          <Splide
-            hasTrack={false}
-            options={{
-              perPage: 1,
-              perMove: 1,
-              type: "slider",
-              pagination: false,
-              gap: "2px",
-            }}
-          >
-            <div className="flex flex-col">
-              <div className="w-full bg-white text-black py-9 px-[24px] lg:px-[60px] flex flex-col lg:flex-row mb-7 lg:mb-16">
-                <div className="lg:py-[24px] flex items-center justify-center gap-9 w-full lg:w-fit lg:pr-[54px] max-lg:pb-6 max-lg:border-b max-lg:border-b-lineLight">
-                  <div className="flex flex-col items-center max-md:max-w-[120px]">
-                    <h3>4.9</h3>
-                    <p className="neue-montreal-text text-xs leading-[20px] text-center mb-8">
-                      Gebaseerd op 120+ Google reviews
-                    </p>
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="14"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M3.77218 13.0439C3.01562 13.5003 2.08225 12.8231 2.28138 11.9623L2.96733 8.99688C3.0508 8.63602 2.92797 8.25857 2.64811 8.01594L0.346317 6.02034C-0.321212 5.44162 0.0347376 4.34492 0.9149 4.26852L3.96122 4.00408C4.3304 3.97203 4.65159 3.73846 4.79585 3.39713L5.97356 0.610567C6.31771 -0.2037 7.47164 -0.2037 7.81578 0.610567L8.9935 3.39713C9.13776 3.73846 9.45895 3.97203 9.82813 4.00408L12.8744 4.26852C13.7546 4.34492 14.1106 5.44162 13.443 6.02034L11.1412 8.01594C10.8614 8.25857 10.7385 8.63602 10.822 8.99688L11.508 11.9623C11.7071 12.8231 10.7737 13.5003 10.0172 13.0439L7.41121 11.4719C7.09352 11.2803 6.69583 11.2803 6.37814 11.4719L3.77218 13.0439Z"
-                            fill="#F5CA0F"
-                          />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-between items-center gap-8 h-full">
-                    <img
-                      src="/images/logos/google-full.png"
-                      className="h-9 w-full min-w-[100px]"
-                    />
-                    <img
-                      src="/images/logos/google-small.png"
-                      className="h-[42px]"
-                    />
-                  </div>
-                </div>
-
-                {/* slides */}
-                <div className="lg:max-w-[700px] xl:max-w-[900px]">
-                  <SplideTrack>
-                    {chunk(reviews, 2).map((pair, idx) => (
-                      <SplideSlide
-                        key={idx}
-                        className="flex flex-col lg:flex-row"
-                      >
-                        {pair.map((review, i) => (
-                          <ReviewItem
-                            key={i}
-                            name={review.name}
-                            text={review.text}
-                            date={review.date}
-                            image={review.image}
-                          />
-                        ))}
-                      </SplideSlide>
-                    ))}
-                  </SplideTrack>
-                </div>
-              </div>
-
-              <div className="splide__arrows flex justify-center gap-4">
-                <button
-                  className="splide__arrow splide__arrow--prev bg-transparent"
-                  style={{ position: "static", transform: "unset" }}
-                >
-                  <div className="">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="15"
-                      viewBox="0 0 16 15"
-                      fill="none"
-                    >
-                      <path
-                        d="M9.18433 14.5873C9.19645 14.6012 9.56776 14.7079 10.0094 14.8242C10.4511 14.9406 10.8173 15.018 10.8231 14.9964C10.829 14.9747 10.8747 14.6233 10.9246 14.2155C11.025 13.3965 11.2681 12.4403 11.5278 11.8423C12.3373 9.97855 13.7898 8.74449 15.5514 8.42374L16 8.34204V7.51873L16 6.69535L15.5934 6.61716C12.9296 6.10492 11.1929 3.82198 10.8681 0.405558C10.8469 0.182467 10.8215 0 10.8118 0C10.7219 0 9.23329 0.411202 9.20514 0.443776C9.18478 0.467331 9.19992 0.67647 9.23884 0.908449C9.6696 3.47722 10.903 5.5675 12.5036 6.4415L12.8875 6.65116L4.99237 6.66757L0 6.678L0 8.34426L5.00521 8.3547L12.8817 8.37118L12.397 8.65267C11.1395 9.38287 10.144 10.8152 9.55772 12.7378C9.39065 13.2856 9.13857 14.5343 9.18433 14.5873Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </div>
-                </button>
-                <button
-                  className="splide__arrow splide__arrow--next"
-                  style={{ position: "static", transform: "unset" }}
-                >
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="15"
-                      viewBox="0 0 16 15"
-                      fill="none"
-                    >
-                      <path
-                        d="M9.18433 14.5873C9.19645 14.6012 9.56776 14.7079 10.0094 14.8242C10.4511 14.9406 10.8173 15.018 10.8231 14.9964C10.829 14.9747 10.8747 14.6233 10.9246 14.2155C11.025 13.3965 11.2681 12.4403 11.5278 11.8423C12.3373 9.97855 13.7898 8.74449 15.5514 8.42374L16 8.34204V7.51873L16 6.69535L15.5934 6.61716C12.9296 6.10492 11.1929 3.82198 10.8681 0.405558C10.8469 0.182467 10.8215 0 10.8118 0C10.7219 0 9.23329 0.411202 9.20514 0.443776C9.18478 0.467331 9.19992 0.67647 9.23884 0.908449C9.6696 3.47722 10.903 5.5675 12.5036 6.4415L12.8875 6.65116L4.99237 6.66757L0 6.678L0 8.34426L5.00521 8.3547L12.8817 8.37118L12.397 8.65267C11.1395 9.38287 10.144 10.8152 9.55772 12.7378C9.39065 13.2856 9.13857 14.5343 9.18433 14.5873Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </div>
-                </button>
+          {isLoadingReviews ? (
+            <div className="flex items-center justify-center py-12 w-full">
+              <div className="w-full bg-white text-black py-9 px-[24px] lg:px-[60px] flex flex-col items-center">
+                <p className="neue-montreal-text text-sm text-textLight">
+                  Reviews laden...
+                </p>
               </div>
             </div>
-          </Splide>
+          ) : reviews.length > 0 ? (
+            <Splide
+              hasTrack={false}
+              options={{
+                perPage: 1,
+                perMove: 1,
+                type: "slider",
+                pagination: false,
+                gap: "2px",
+              }}
+            >
+              <div className="flex flex-col">
+                <div className="w-full bg-white text-black py-9 px-[24px] lg:px-[60px] flex flex-col lg:flex-row mb-7 lg:mb-16">
+                  <div className="lg:py-[24px] flex items-center justify-center gap-9 w-full lg:w-fit lg:pr-[54px] max-lg:pb-6 max-lg:border-b max-lg:border-b-lineLight">
+                    <div className="flex flex-col items-center max-md:max-w-[120px]">
+                      <h3>{averageRating.toFixed(1)}</h3>
+                      <p className="neue-montreal-text text-xs leading-[20px] text-center mb-8">
+                        {totalReviews > 0
+                          ? `Gebaseerd op ${totalReviews}+ Google reviews`
+                          : "Gebaseerd op Google reviews"}
+                      </p>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                          >
+                            <path
+                              d="M3.77218 13.0439C3.01562 13.5003 2.08225 12.8231 2.28138 11.9623L2.96733 8.99688C3.0508 8.63602 2.92797 8.25857 2.64811 8.01594L0.346317 6.02034C-0.321212 5.44162 0.0347376 4.34492 0.9149 4.26852L3.96122 4.00408C4.3304 3.97203 4.65159 3.73846 4.79585 3.39713L5.97356 0.610567C6.31771 -0.2037 7.47164 -0.2037 7.81578 0.610567L8.9935 3.39713C9.13776 3.73846 9.45895 3.97203 9.82813 4.00408L12.8744 4.26852C13.7546 4.34492 14.1106 5.44162 13.443 6.02034L11.1412 8.01594C10.8614 8.25857 10.7385 8.63602 10.822 8.99688L11.508 11.9623C11.7071 12.8231 10.7737 13.5003 10.0172 13.0439L7.41121 11.4719C7.09352 11.2803 6.69583 11.2803 6.37814 11.4719L3.77218 13.0439Z"
+                              fill="#F5CA0F"
+                            />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-between items-center gap-8 h-full">
+                      <img
+                        src="/images/logos/google-full.png"
+                        className="h-9 w-full min-w-[100px]"
+                      />
+                      <img
+                        src="/images/logos/google-small.png"
+                        className="h-[42px]"
+                      />
+                    </div>
+                  </div>
+
+                  {/* slides */}
+                  <div className="lg:max-w-[700px] xl:max-w-[900px]">
+                    <SplideTrack>
+                      {chunk(reviews, 2).map((pair, idx) => (
+                        <SplideSlide
+                          key={idx}
+                          className="flex flex-col lg:flex-row"
+                        >
+                          {pair.map((review, i) => (
+                            <ReviewItem
+                              key={`${idx}-${i}`}
+                              name={review.name}
+                              text={review.text}
+                              date={review.date}
+                              image={review.image}
+                              rating={review.rating}
+                            />
+                          ))}
+                        </SplideSlide>
+                      ))}
+                    </SplideTrack>
+                  </div>
+                </div>
+
+                <div className="splide__arrows flex justify-center gap-4">
+                  <button
+                    className="splide__arrow splide__arrow--prev bg-transparent"
+                    style={{ position: "static", transform: "unset" }}
+                  >
+                    <div className="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="15"
+                        viewBox="0 0 16 15"
+                        fill="none"
+                      >
+                        <path
+                          d="M9.18433 14.5873C9.19645 14.6012 9.56776 14.7079 10.0094 14.8242C10.4511 14.9406 10.8173 15.018 10.8231 14.9964C10.829 14.9747 10.8747 14.6233 10.9246 14.2155C11.025 13.3965 11.2681 12.4403 11.5278 11.8423C12.3373 9.97855 13.7898 8.74449 15.5514 8.42374L16 8.34204V7.51873L16 6.69535L15.5934 6.61716C12.9296 6.10492 11.1929 3.82198 10.8681 0.405558C10.8469 0.182467 10.8215 0 10.8118 0C10.7219 0 9.23329 0.411202 9.20514 0.443776C9.18478 0.467331 9.19992 0.67647 9.23884 0.908449C9.6696 3.47722 10.903 5.5675 12.5036 6.4415L12.8875 6.65116L4.99237 6.66757L0 6.678L0 8.34426L5.00521 8.3547L12.8817 8.37118L12.397 8.65267C11.1395 9.38287 10.144 10.8152 9.55772 12.7378C9.39065 13.2856 9.13857 14.5343 9.18433 14.5873Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                  <button
+                    className="splide__arrow splide__arrow--next"
+                    style={{ position: "static", transform: "unset" }}
+                  >
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="15"
+                        viewBox="0 0 16 15"
+                        fill="none"
+                      >
+                        <path
+                          d="M9.18433 14.5873C9.19645 14.6012 9.56776 14.7079 10.0094 14.8242C10.4511 14.9406 10.8173 15.018 10.8231 14.9964C10.829 14.9747 10.8747 14.6233 10.9246 14.2155C11.025 13.3965 11.2681 12.4403 11.5278 11.8423C12.3373 9.97855 13.7898 8.74449 15.5514 8.42374L16 8.34204V7.51873L16 6.69535L15.5934 6.61716C12.9296 6.10492 11.1929 3.82198 10.8681 0.405558C10.8469 0.182467 10.8215 0 10.8118 0C10.7219 0 9.23329 0.411202 9.20514 0.443776C9.18478 0.467331 9.19992 0.67647 9.23884 0.908449C9.6696 3.47722 10.903 5.5675 12.5036 6.4415L12.8875 6.65116L4.99237 6.66757L0 6.678L0 8.34426L5.00521 8.3547L12.8817 8.37118L12.397 8.65267C11.1395 9.38287 10.144 10.8152 9.55772 12.7378C9.39065 13.2856 9.13857 14.5343 9.18433 14.5873Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </Splide>
+          ) : (
+            <div className="flex items-center justify-center py-12 w-full">
+              <div className="w-full bg-white text-black py-9 px-[24px] lg:px-[60px] flex flex-col items-center">
+                <p className="neue-montreal-text text-sm text-textLight">
+                  Geen reviews beschikbaar
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
       {/* white section */}

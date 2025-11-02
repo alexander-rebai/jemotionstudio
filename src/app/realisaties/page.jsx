@@ -99,7 +99,7 @@ export default function Page() {
         </div>
         <p className="mt-4 text-white">Totaalproject Destelbergen |<span className="text-textLight"> energetische renovatie</span></p>
         <div className="lg:pt-[76] pt-[54] lg:pb-[140] pb-[100] flex justify-center">
-          <ArrowButton text="bekijk meer" width="215px" />
+          {/* <ArrowButton text="bekijk meer" width="215px" /> */}
         </div>
       </div>
 
