@@ -64,7 +64,7 @@ export default function Page() {
   return (
     <div>
       <section className="min-h-[50vh] pt-[56px] md:pt-[115px] bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right bg-bgBlack-300">
-        <div className="lg:px-16 py-[100px] flex flex-col items-center text-center lg:items-start lg:text-start px-4">
+        <div className="lg:px-16 py-[100px] flex flex-col items-start lg:items-start text-start px-4">
           <h1 className="max-w-[1000px] mb-7 lg:mb-[42px]">
             Duurzaam renoveren met oog voor{" "}
             <span className="italic">comfort.</span>

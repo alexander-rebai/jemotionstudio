@@ -162,7 +162,7 @@ export default function Page() {
   return (
     <div className="bg-bgBlack-100">
       <section className="pt-[56px] md:pt-[115px] px-4 bg-bgBlack-300">
-        <div className="container mx-auto flex flex-col items-center md:items-start justify-center md:text-start text-center py-16 md:py-[86px]">
+        <div className="container mx-auto flex flex-col items-start justify-center text-start py-16 md:py-[86px]">
           <h1 className="mb-7 lg:mb-[42px] max-w-[1000px]">
             Renoveren
             <br />
@@ -196,7 +196,7 @@ export default function Page() {
         ))}
       </section>
       {/* assets section  */}
-      <section className="px-4 lg:px-16 py-[100px] lg:py-[140px] bg-[url('/images/over-ons/arrows-bg-green.png')] bg-no-repeat bg-top bg-bgBlack-300 bg-contain">
+      <section className="px-4 lg:px-16 py-[100px] lg:py-[140px] bg-[url('/images/over-ons/arrows-bg-green.png')] bg-no-repeat bg-top bg-bgBlack-300 bg-size-[190%_auto]">
         <div className="container mx-auto">
           <div className="flex max-lg:justify-center">
             <DotText text="Eerdere projecten" />

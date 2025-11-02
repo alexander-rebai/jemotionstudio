@@ -33,7 +33,7 @@ const AccordionItem = ({
       {/* center side  */}
       <div className="w-full lg:text-center flex flex-col items-start lg:items-center lg:col-span-2 max-lg:order-1">
         <div className="flex items-center justify-between w-full">
-          <h3 className={`${active ? "mb-0" : "mb-0"} w-full`}>{title}</h3>
+          <h3 className={`${active ? "mb-0" : "mb-0"} md:w-full w-3/4`}>{title}</h3>
           {/* close button  */}
           <div className="w-fit flex justify-end lg:hidden">
             <button

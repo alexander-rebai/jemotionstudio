@@ -217,10 +217,11 @@ export default function Page() {
         {/* Overlay for better text readability (optional) */}
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         
-        <div className="md:text-start text-center flex flex-col md:items-start items-center justify-center z-20 relative">
-          <h1 className="mb-4 text-[90px]">
-            Renoveren <br /> met één vertrouwde <span className="italic">partner.</span>
+        <div className="text-start flex flex-col items-start justify-center z-20 relative px-6 md:px-0">
+          <h1 className="!md:text-[90px] !text-[48px]">
+            Renoveren
           </h1>
+          <h1 className="mb-4 !md:text-[90px] !text-[48px]">met één vertrouwde <span className="italic">partner.</span></h1>
           <p className="neue-montreal-text text-[14px] md:text-sm mb-8 leading-[160%] md:leading-[22px]">
             Renoveren is meer dan een frisse look: het gaat om comfort, <br />
             vertrouwen én slim investeren in je woning.
@@ -259,7 +260,10 @@ export default function Page() {
         id="section-2"
       >
         <h3 className="text-center mb-12 md:mb-[85px]">
-          Slim georganiseerd. Vakkundig uitgevoerd.
+          Slim georganiseerd. 
+          <br className="block md:hidden" />
+          <span className="hidden md:inline">{" "}</span>
+          Vakkundig uitgevoerd.
         </h3>
 
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch relative">
@@ -272,9 +276,9 @@ export default function Page() {
           </div>
           <div className="bg-line w-full h-px block lg:hidden my-12"></div>
           <div className="bg-line w-px hidden lg:block self-stretch"></div>
-          <div className="w-full lg:flex-1 lg:pl-[86px] justify-center flex flex-col">
+          <div className="w-full lg:flex-1 lg:pl-[86px] justify-center flex flex-col ">
             <DotText text={"over ons"} />
-            <p className="text-[16px] md:text-[21px] mb-6 text-justify">
+            <p className="text-[16px] md:text-[21px] mb-4 text-justify">
               Renovise is jouw ervaren aannemer in renovatie en
               energieoplossingen.
               <span className="block my-6"></span>

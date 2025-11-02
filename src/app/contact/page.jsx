@@ -9,8 +9,8 @@ export default function Page() {
   return (
     <div>
       <section className="pt-[56px] md:pt-[115px] px-4 lg:px-16 bg-bgBlack-300 text-white">
-        <div className="flex flex-col lg:flex-row justify-between items-center py-[100px] lg:py-[140px] gap-16 lg:gap-[130px]">
-          <div className="w-full max-lg:text-center">
+        <div className="flex flex-col lg:flex-row justify-between items-start py-[100px] lg:py-[140px] gap-16 lg:gap-[130px]">
+          <div className="w-full max-lg:text-start">
             <h1 className="mb-6">
               Vertel ons jouw <span className="italic">plannen</span>
             </h1>
@@ -18,7 +18,7 @@ export default function Page() {
               Heb je een vraag of wil je vrijblijvend iets bespreken? Laat je
               gegevens achter en we nemen snel contact met je op.
             </p>
-            <div className="flex max-lg:justify-center">
+            <div className="flex justify-start">
               <ArrowButton text="Start jouw renovatie" href="#contact-form" />
             </div>
           </div>

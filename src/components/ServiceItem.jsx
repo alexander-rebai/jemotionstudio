@@ -2,19 +2,29 @@ import React from "react";
 import ArrowButton from "./ArrowButton";
 import DotText from "./DotText";
 
-const ServiceItem = ({ title, highlight, text, button, image, list, text2 }) => {
+const ServiceItem = ({
+  title,
+  highlight,
+  text,
+  button,
+  image,
+  list,
+  text2,
+}) => {
   return (
     <div className="py-12 lg:py-[86px] grid lg:grid-cols-3 gap-9 lg:gap-[86px] border-t border-t-line">
       <div>
         <h3 className="mb-12 lg:mb-[60px]">{title}</h3>
         <p className="neue-montreal-text text-textLight lg:mb-[48px] md:leading-[26px] md:text-[18px] text-xs leading-[150%]">
           <span className="text-primary/60">{highlight}</span>
-          <br />
-          <br />
-          {text}
-         <span className={`${text2 ? "block" : "hidden"}`}>
-          <span className="block my-6"></span>
-          {text2}
+          <span className={`${text2 && "hidden md:block"}`}>
+            <br />
+            <br />
+            {text}
+          </span>
+          <span className={`${text2 ? "block" : "hidden"}`}>
+            <span className="block my-6"></span>
+            {text2}
           </span>
         </p>
         <div className="max-lg:hidden">
