@@ -17,14 +17,14 @@ const AccordionItem = ({
       <div
         className={`w-full ${
           active ? "max-h-[500px]" : "max-h-0 max-lg:hidden"
-        } overflow-hidden transition-all duration-150 ease-in-out max-lg:order-2`}
+        } overflow-hidden transition-all duration-150 ease-in-out max-lg:order-2 ${title === "Waarom Renovise?" ? "" : "opacity-0"}`}
       >
-        <div className="flex gap-4 mb-[54px] lg:mb-[70px]">
+        <div className={`flex gap-4 mb-[54px] lg:mb-[70px]`}>
           <div className="bg-primary w-0.5 h-[56px]"></div>
           <div className="flex flex-col justify-center gap-1">
             <h6>200+</h6>
             <p className="neue-montreal-text text-[10px] lg:text-[14px]">
-             tevreden opdrachtgevers{" "}
+              tevreden opdrachtgevers{" "}
             </p>
           </div>
         </div>

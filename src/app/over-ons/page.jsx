@@ -161,7 +161,7 @@ export default function Page() {
 
   return (
     <div className="bg-bgBlack-100">
-      <section className="pt-[56px] md:pt-[115px] px-4">
+      <section className="pt-[56px] md:pt-[115px] px-4 bg-bgBlack-300">
         <div className="container mx-auto flex flex-col items-center md:items-start justify-center md:text-start text-center py-16 md:py-[86px]">
           <h1 className="mb-7 lg:mb-[42px] max-w-[1000px]">
             Renoveren
@@ -174,11 +174,12 @@ export default function Page() {
         </div>
       </section>
       {/* image section  */}
-      <section className="container mx-auto px-4">
+      <section className="px-4 md:px-16 relative">
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-bgBlack-300 z-0"></div>
         <img
           src="/images/over-ons/image-1.png"
           alt="Over ons"
-          className="w-full"
+          className="w-full relative z-10"
         />
       </section>
       {/* accordion section  */}

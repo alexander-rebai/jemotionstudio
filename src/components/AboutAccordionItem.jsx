@@ -28,7 +28,7 @@ const AboutAccordionItem = ({
             isActive ? "max-h-[250px]  max-lg:pt-[38px] lg:py-4" : "max-h-0"
           } overflow-hidden transition-all duration-300 ease-in-out`}
         >
-          <p className="neue-montreal-text text-[12px] md:text-[18px] leading-[150%] md:leading-[26px] text-textLight">
+          <p className="neue-montreal-text text-[12px] md:text-[18px] leading-[150%] md:leading-[26px] text-textLight text-justify">
             {content}
           </p>
         </div>

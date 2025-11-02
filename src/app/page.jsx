@@ -180,6 +180,8 @@ export default function Page() {
     "/images/logos/slider-logo-5.png",
   ];
 
+  const infiniteLogos = [...logos, ...logos, ...logos];
+
   const chunk = (arr, size = 2) => {
     const out = [];
     for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
@@ -200,7 +202,7 @@ export default function Page() {
   return (
     <div>
       {/* hero  */}
-      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center home-hero md:px-46">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center home-hero md:px-16">
         {/* Background Video */}
         <video
           autoPlay
@@ -216,10 +218,10 @@ export default function Page() {
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         
         <div className="md:text-start text-center flex flex-col md:items-start items-center justify-center z-20 relative">
-          <h1 className="mb-[42px]">
-            Jouw renovatie. <br /> Eén vertrouwde partner.
+          <h1 className="mb-4 text-[90px]">
+            Renoveren <br /> met één vertrouwde <span className="italic">partner.</span>
           </h1>
-          <p className="neue-montreal-text text-xs md:text-sm mb-12 leading-[160%] md:leading-[22px]">
+          <p className="neue-montreal-text text-[14px] md:text-sm mb-8 leading-[160%] md:leading-[22px]">
             Renoveren is meer dan een frisse look: het gaat om comfort, <br />
             vertrouwen én slim investeren in je woning.
           </p>
@@ -253,35 +255,34 @@ export default function Page() {
         </div>
       </section>
       <section
-        className="bg-bgBlack-300 px-4 sm:px-16 py-[100px] md:py-[140px] container mx-auto"
+        className="bg-bgBlack-300 px-4 sm:px-16 py-[85px]"
         id="section-2"
       >
         <h3 className="text-center mb-12 md:mb-[85px]">
           Slim georganiseerd. Vakkundig uitgevoerd.
         </h3>
 
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-[86px] h-full items-center relative">
-          <div className="w-full lg:pr-[75px] lg:border-r lg:border-r-line">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch relative">
+          <div className="w-full lg:flex-1 flex items-center lg:pr-[86px]">
             <img
               src="/images/home/image-1.png"
               alt=""
-              className="w-full h-full lg:min-h-[412px] lg:object-cover"
+              className="w-full h-full lg:min-h-[412px] lg:object-contain"
             />
           </div>
-          <div className="bg-line w-full h-px block lg:hidden"></div>
-          <div className="w-full">
+          <div className="bg-line w-full h-px block lg:hidden my-12"></div>
+          <div className="bg-line w-px hidden lg:block self-stretch"></div>
+          <div className="w-full lg:flex-1 lg:pl-[86px] justify-center flex flex-col">
             <DotText text={"over ons"} />
-            <p className="text-[16px] md:text-[24px] mb-[54px] md:mb-12">
+            <p className="text-[16px] md:text-[21px] mb-6 text-justify">
               Renovise is jouw ervaren aannemer in renovatie en
-              energieoplossingen
-              <br />
-              <br />
+              energieoplossingen.
+              <span className="block my-6"></span>
               We nemen het hele traject uit handen, van gerichte deelrenovaties
               tot complete totaaloplossingen. We zorgen voor de volledige
               coördinatie: planning, opvolging én vakkundige uitvoering door
               betrouwbare vakmensen.
-              <br />
-              <br />
+              <span className="block my-6"></span>
               <span className="text-textLight">
                 Met Renovise heb je één aanspreekpunt dat zorgt voor een vlot en
                 zorgeloos traject. Het resultaat: een comfortabele,
@@ -296,7 +297,7 @@ export default function Page() {
       {/* slide section */}
       <section
         id="slider-section"
-        className="pb-[100px] md:pb-[160px] px-4 sm:px-16 container mx-auto bg-bgBlack-300 overflow-x-hidden"
+        className="pb-[100px] md:pb-[160px] px-4 sm:px-16 w-full bg-bgBlack-300 overflow-x-hidden"
       >
         <DotText text="onze diensten" />
         <h2 className="mb-7 md:mb-12">Wat we voor jou doen</h2>
@@ -632,20 +633,20 @@ export default function Page() {
       </section>
 
       {/* logos section */}
-      <section className="bg-black-200">
-        <div className="w-full h-full bg-[url('/images/home/arrows-bg-mobile.png')] md:bg-[url('/images/home/arrows-bg.png')] bg-no-repeat bg-top bg-contain">
-          <div className="container mx-auto">
-            <div className="flex items-center justify-center max-md:py-[100px] md:min-h-[50vh]"/>
+      <section className="bg-[#1F1F1F]">
+        <div className="w-full h-full bg-[url('/images/home/arrows-bg-mobile.png')] md:bg-[url('/images/home/arrows-bg.png')] bg-no-repeat bg-top bg-cover">
+          <div>
+            <div className="flex items-center justify-center md:min-h-[50vh]"/>
             {/* logos slider */}
-            <div className="pb-12 md:pb-[96px]">
+            <div className="pb-12 md:pb-[64px]">
               <Splide
                 hasTrack={false}
                 options={{
                   type: "loop",
                   autoplay: true,
-                  interval: 3000,
-                  speed: 1000,
-                  pauseOnHover: true,
+                  interval: 2000,
+                  speed: 2000,
+                  pauseOnHover: false,
                   arrows: false,
                   pagination: false,
                   perPage: 5,
@@ -659,7 +660,7 @@ export default function Page() {
                 }}
               >
                 <SplideTrack>
-                  {logos.map((logo, i) => (
+                  {infiniteLogos.map((logo, i) => (
                     <SplideSlide key={i}>
                       <div className="border-r border-r-line px-9 lg:px-[96px] flex items-center justify-center h-full w-full">
                         <img
@@ -679,7 +680,7 @@ export default function Page() {
 
       {/* form section */}
       <div
-        className="container mx-auto pb-0 pt-[100px] md:py-[140px]"
+        className="pb-0 pt-[100px] md:py-[140px]"
         id="contact-form"
       >
         <div className="flex flex-col lg:flex-row lg:gap-[150px]">

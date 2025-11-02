@@ -9,12 +9,12 @@ export default function Page() {
   return (
     <div>
       <section className="pt-[56px] md:pt-[115px] px-4 lg:px-16 bg-bgBlack-300 text-white">
-        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center py-[100px] lg:py-[140px] gap-16 lg:gap-[130px]">
+        <div className="flex flex-col lg:flex-row justify-between items-center py-[100px] lg:py-[140px] gap-16 lg:gap-[130px]">
           <div className="w-full max-lg:text-center">
-            <h1 className="mb-7 lg:mb-[42px]">
+            <h1 className="mb-6">
               Vertel ons jouw <span className="italic">plannen</span>
             </h1>
-            <p className="neue-montreal-text text-xs md:text-sm leading-[160%] lg:mb-[48px] mb-[42px]">
+            <p className="neue-montreal-text text-xs md:text-sm leading-[160%] lg:mb-[36px] mb-[36px]">
               Heb je een vraag of wil je vrijblijvend iets bespreken? Laat je
               gegevens achter en we nemen snel contact met je op.
             </p>
@@ -117,7 +117,7 @@ export default function Page() {
             </span>
           </h2>
           <div className="mb-[54px] lg:mb-12 w-full">
-            <ContactForm fullWidthButton />
+            <ContactForm fullWidthButton ctaText="Vrijbljvend adviesgesprek" />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 text-[#FAF5ED] text-center max-lg:w-full max-lg:max-w-[200px]">
             {/* phone box  */}
@@ -145,7 +145,7 @@ export default function Page() {
               </div>
             </a>
             {/* email box  */}
-            <a href="mailto:info@laadexpert.be" className="max-lg:py-9 lg:px-9 max-lg:border-y lg:border-x border-line">
+            <a href="mailto:info@renovise.be" className="max-lg:py-9 lg:px-9 max-lg:border-y lg:border-x border-line">
               <div className="w-full lg:w-[140px] mx-auto flex flex-col items-center gap-8">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <svg
@@ -163,7 +163,7 @@ export default function Page() {
                 </div>
                 <h6>
                   <span className="text-[16px] md:text-[20px]">
-                    info@laadexpert.be
+                    info@renovise.be
                   </span>
                 </h6>
               </div>
@@ -187,7 +187,7 @@ export default function Page() {
                 </div>
                 <h6>
                   <span className="text-[16px] md:text-[20px]">
-                    Beertegemstraat 45B, Kruisem
+                  Coupure 88, 9000 GENT
                   </span>
                 </h6>
               </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ArrowButton from "./ArrowButton";
 import SelectField from "./SelectField";
 
-const ContactForm = ({ fullWidthButton = false }) => {
+const ContactForm = ({ fullWidthButton = false , ctaText = "Vraag jouw offerte aan"}) => {
   const [form, setForm] = useState({
     typeRenovatie: "",
     budgetIndicatie: "",
@@ -75,7 +75,19 @@ const ContactForm = ({ fullWidthButton = false }) => {
       <div>
         <SelectField
           placeholder={"Type renovatie"}
-          options={["option1", "option2", "option3"]}
+          options={[
+            "Totaal renovatie",
+            "Deel renovatie",
+            "Dakwerken",
+            "Gevelwerken",
+            "Ramen en deuren",
+            "Zonnepanelen en thuisbatterij",
+            "Warmtepompen",
+            "Laadpaal",
+            "Interieur",
+            "Badkamer",
+            "Keuken",
+          ]}
           name={"typeRenovatie"}
           value={form.typeRenovatie}
           onChange={handleChange}
@@ -84,14 +96,25 @@ const ContactForm = ({ fullWidthButton = false }) => {
       <div className="flex gap-6 lg:gap-8">
         <SelectField
           placeholder={"Budget indicatie"}
-          options={["option1", "option2", "option3"]}
+          options={[
+            "€100.000",
+            "Tussen €100.000 - 150.000",
+            "Tussen €150.000 - 200.000",
+            "Tussen €200.000 - 300.000",
+            "Weet ik nog niet",
+          ]}
           name={"budgetIndicatie"}
           value={form.budgetIndicatie}
           onChange={handleChange}
         />
         <SelectField
           placeholder={"Gewenste startdatum"}
-          options={["option1", "option2", "option3"]}
+          options={[
+            "Zo snel mogelijk", 
+            "3 tot 6 maanden",
+            "> 1 jaar",
+            "Weet ik nog niet",
+          ]}
           name={"gewensteStartdatum"}
           value={form.gewensteStartdatum}
           onChange={handleChange}
@@ -150,7 +173,7 @@ const ContactForm = ({ fullWidthButton = false }) => {
           </div>
         )}
         <ArrowButton
-          text={isSubmitting ? "Submitting..." : "Vraag jouw offerte aan"}
+          text={isSubmitting ? "Submitting..." : ctaText}
           width={fullWidthButton ? "100%" : "auto"}
           onclick={handleFormSubmit}
         />

@@ -2,7 +2,7 @@ import React from "react";
 import ArrowButton from "./ArrowButton";
 import DotText from "./DotText";
 
-const ServiceItem = ({ title, highlight, text, button, image, list }) => {
+const ServiceItem = ({ title, highlight, text, button, image, list, text2 }) => {
   return (
     <div className="py-12 lg:py-[86px] grid lg:grid-cols-3 gap-9 lg:gap-[86px] border-t border-t-line">
       <div>
@@ -12,6 +12,10 @@ const ServiceItem = ({ title, highlight, text, button, image, list }) => {
           <br />
           <br />
           {text}
+         <span className={`${text2 ? "block" : "hidden"}`}>
+          <span className="block my-6"></span>
+          {text2}
+          </span>
         </p>
         <div className="max-lg:hidden">
           <ArrowButton text={button} href="#contact-form" />
@@ -20,7 +24,7 @@ const ServiceItem = ({ title, highlight, text, button, image, list }) => {
       <div>
         <img src={image} alt="" className="w-full h-full" />
       </div>
-      <div className="self-center">
+      <div className="mx-auto text-justify">
         {list.subtitle && (
           <DotText text={list.subtitle} margin={"mb-4 lg:mb-6"} />
         )}

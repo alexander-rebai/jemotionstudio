@@ -30,7 +30,8 @@ export default function Page() {
     {
       title: "Duurzame technieken",
       highlight: "Word jij ook zelfvoorzienend?",
-      text: "Zonnepanelen, batterijen en warmtepompen worden steeds toegankelijker. Samen bekijken we wat de beste oplossing dat past bij jouw situatie.",
+      text: "Hernieuwbare energie wordt steeds meer toegankelijker.",
+      text2: "Van zonnepanelen tot warmtepompen: we helpen je de perfecte oplossing te vinden voor jouw situatie.",
       button: "Vraag een offerte aan",
       image: "/images/renovatie/image-2.png",
       list: {
@@ -63,7 +64,7 @@ export default function Page() {
   return (
     <div>
       <section className="min-h-[50vh] pt-[56px] md:pt-[115px] bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right bg-bgBlack-300">
-        <div className="container mx-auto py-[100px] flex flex-col items-center text-center lg:items-start lg:text-start px-4">
+        <div className="lg:px-16 py-[100px] flex flex-col items-center text-center lg:items-start lg:text-start px-4">
           <h1 className="max-w-[1000px] mb-7 lg:mb-[42px]">
             Duurzaam renoveren met oog voor{" "}
             <span className="italic">comfort.</span>
@@ -74,24 +75,24 @@ export default function Page() {
           <ArrowButton text="Ontdek de mogelijkheden" href="/renovatie" />
         </div>
       </section>
-      <section className="bg-bgBlack-300 px-4 sm:px-16 py-[100px] md:py-[140px] container mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-[86px] h-full items-center relative">
-          <div className="w-full lg:pr-[75px] lg:border-r lg:border-r-line">
+      <section className="bg-bgBlack-300 px-4 sm:px-16 py-[85px]">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch relative">
+          <div className="w-full lg:flex-1 flex items-center lg:pr-[86px]">
             <img
               src="/images/renovatie/image-1.png"
               alt=""
-              className="w-full h-full lg:min-h-[506px] lg:object-cover"
+              className="w-full h-full lg:min-h-[412px] lg:object-contain"
             />
           </div>
-          <div className="bg-line w-full h-px block lg:hidden"></div>
-          <div className="w-full py-16 lg:py-[45px]">
-            <h3 className="mb-6 lg:mb-12">Waarom renoveren?</h3>
-            <p className="text-[16px] md:text-[24px] mb-[54px] md:mb-12">
+          <div className="bg-line w-full h-px block lg:hidden my-12"></div>
+          <div className="bg-line w-px hidden lg:block self-stretch"></div>
+          <div className="w-full lg:flex-1 lg:pl-[86px] justify-center flex flex-col">
+            <h3 className="mb-6">Waarom renoveren?</h3>
+            <p className="text-[16px] md:text-[21px] mb-6 text-justify">
               Een renovatie biedt direct tastbare voordelen: lagere
               energiekosten, aangenamer klimaat en een hogere verkoopwaarde. De
               vraag is niet óf het loont, maar hoe je het strategisch aanpakt
-              <br />
-              <br />
+              <span className="block my-6"></span>
               <span className="text-textLight">
                 Bij Renovise combineren we bouwkundige kennis met
                 energie-expertise. Zo creëren we woningen die vandaag
@@ -105,9 +106,9 @@ export default function Page() {
 
       {/* services section */}
       <section>
-        <div className="container mx-auto px-4">
+        <div className="px-4 lg:px-16">
           <div className="text-center flex flex-col items-center">
-            <DotText text="onze diensten" />
+            <DotText text="onze diensten" margin="mb-6 md:mb-6" />
             <h2 className="mb-12 lg:mb-[60px]">Wat we voor jou doen</h2>
           </div>
 

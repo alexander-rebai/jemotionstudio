@@ -67,23 +67,22 @@ export default function Page() {
 
   return (
     <>
-      <div className="flex lg:pr-[64] lg:pl-[64] pl-[16] pr-[16] max-lg:flex-col container mx-auto">
+      <div className="flex lg:pr-[64] lg:pl-[64] pl-[16] pr-[16] max-lg:flex-col">
         <div className="lg:pt-[260] pt-[184] max-w-[933] ">
-          <DotText text={"Eerdere projecten"} />
           <h1>
             Onze realisaties zeggen meer dan{" "}
             <span className="italic">woorden</span>
           </h1>
         </div>
         <div className="lg:pt-[388] pt-[36] 2xl:max-w-[100%] 2xl:w-[50%] 2xl:flex 2xl:justify-center">
-          <p className="lg:max-w-[310] max-w-[280] neue-montreal-text md:text-[14px] text-[12px] lg:leading-[22px] leading-[160%] lg:flex lg:justify-center">
+          <p className="lg:max-w-[310] max-w-[280] neue-montreal-text md:text-[14px] text-[12px] lg:leading-[22px] leading-[160%] lg:flex lg:justify-center text-justify">
             Laat je inspireren door de projecten die we al mochten realiseren,
             van energiezuinige upgrades tot volledige totaalrenovaties met oog
             voor detail en hoogwaardige afwerking.
           </p>
         </div>
       </div>
-      <div className="lg:pt-[158] lg:pl-[64] lg:pr-[64] pl-[16] pr-[16] pt-[100] container mx-auto">
+      <div className="lg:pt-[158] lg:pl-[64] lg:pr-[64] pl-[16] pr-[16] pt-[100]">
         <h4 className="text-textLight">
           Elke woning is uniek, elke klant heeft een eigen verhaal.
         </h4>
@@ -97,7 +96,7 @@ export default function Page() {
             />
           ))}
         </div>
-        <p className="mt-4 text-white">Totaalproject Destelbergen |<span className="text-textLight"> energetische renovatie</span></p>
+        <p className="mt-4 text-white neue-montreal-text text-[18px]">Totaalproject Destelbergen |<span className="text-textLight"> energetische renovatie</span></p>
         <div className="lg:pt-[76] pt-[54] lg:pb-[140] pb-[100] flex justify-center">
           {/* <ArrowButton text="bekijk meer" width="215px" /> */}
         </div>
