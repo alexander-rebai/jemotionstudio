@@ -218,10 +218,10 @@ export default function Page() {
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         
         <div className="text-start flex flex-col items-start justify-center z-20 relative px-6 md:px-0">
-          <h1 className="!md:text-[90px] !text-[48px]">
+          <h1 className="md:!text-[90px] !text-[48px]">
             Renoveren
           </h1>
-          <h1 className="mb-4 !md:text-[90px] !text-[48px]">met één vertrouwde <span className="italic">partner.</span></h1>
+          <h1 className="mb-4 md:!text-[90px] !text-[48px]">met één vertrouwde <span className="italic">partner.</span></h1>
           <p className="neue-montreal-text text-[14px] md:text-sm mb-8 leading-[160%] md:leading-[22px]">
             Renoveren is meer dan een frisse look: het gaat om comfort, <br />
             vertrouwen én slim investeren in je woning.
