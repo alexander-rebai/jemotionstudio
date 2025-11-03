@@ -3,8 +3,9 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend_api_key = process.env.RESEND_API_KEY;
-const resend_email = process.env.RESEND_EMAIL;
-const resend = new Resend(resend_api_key);
+const resend = resend_api_key ? new Resend(resend_api_key) : null;
+const resendFrom = "Renovise LEADS <renovise@mail.leveragelabs.io>";
+const resendRecipient = "renovise@info.be";
 
 export async function POST(request) {
   try {
@@ -19,18 +20,17 @@ export async function POST(request) {
       extraInfo,
     } = await request.json();
 
-    if (!resend_api_key) {
-      return NextResponse.json(
-        { error: "Missing Resend API key" },
-        { status: 500 }
-      );
-    }
-
-    if (!resend_email) {
-      return NextResponse.json(
-        { error: "Missing Resend email recipient" },
-        { status: 500 }
-      );
+    if (!resend_api_key || !resend) {
+      console.log("[EMAIL:STUB] Contact form submission", {
+        typeRenovatie,
+        budgetIndicatie,
+        gewensteStartdatum,
+        name,
+        email,
+        phone,
+        extraInfo,
+      });
+      return NextResponse.json({ success: true, stub: true }, { status: 200 });
     }
 
     if (!name) {
@@ -55,9 +55,9 @@ export async function POST(request) {
     }
 
     await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: resend_email,
-      subject: "New Contact Form Submission",
+      from: resendFrom,
+      to: resendRecipient,
+      subject: "Nieuw contactformulier ingediend",
       react: (
         <Email
           typeRenovatie={typeRenovatie}
