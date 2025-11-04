@@ -217,13 +217,13 @@ export default function Page() {
         {/* Overlay for better text readability (optional) */}
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         
-        <div className="text-start flex flex-col items-start justify-center z-20 relative px-6 md:px-0">
+        <div className="lg:mt-[100px] text-start flex flex-col items-start justify-center z-20 relative px-4 md:px-0 pr-0">
           <h1 className="md:!text-[90px] !text-[48px]">
             Renoveren
           </h1>
           <h1 className="mb-4 md:!text-[90px] !text-[48px]">met één vertrouwde <span className="italic">partner.</span></h1>
           <p className="neue-montreal-text text-[14px] md:text-sm mb-8 leading-[160%] md:leading-[22px]">
-            Renoveren is meer dan een frisse look: het gaat om comfort, <br />
+            Renoveren is meer dan een frisse look: het gaat om comfort, <br className="hidden md:block" />
             vertrouwen én slim investeren in je woning.
           </p>
           <ArrowButton text="Start jouw renovatie" href="#contact-form" />
@@ -301,10 +301,10 @@ export default function Page() {
       {/* slide section */}
       <section
         id="slider-section"
-        className="pb-[100px] md:pb-[160px] px-4 sm:px-16 w-full bg-bgBlack-300 overflow-x-hidden"
+        className="pb-[100px] md:pb-[160px] px-4 sm:pl-16 pr-0 w-full bg-bgBlack-300 overflow-x-hidden"
       >
         <DotText text="onze diensten" />
-        <h2 className="mb-7 md:mb-12">Wat we voor jou doen</h2>
+        <h2 className="mb-6 md:mb-12">Wat we voor jou doen</h2>
         <div className="w-full h-px bg-line mb-9 md:mb-[60px]"></div>
         <Splide
           ref={sliderRef}
@@ -335,7 +335,7 @@ export default function Page() {
         >
           <div className="flex flex-col lg:flex-row gap-12 md:gap-[72px]">
             <div className="w-full flex flex-col items-start min-w-[300px]">
-              <p className="neue-montreal-text leading-[140%] md:leading-[26px] text-[14px] md:text-[18px] text-textLight mb-[54px] md:mb-12">
+              <p className="neue-montreal-text leading-[140%] md:leading-[26px] text-[14px] md:text-[18px] text-textLight mb-6 md:mb-12">
                 Van gerichte ingrepen of upgrades tot volledige transformaties:
                 ontdek welke oplossing past bij jouw plannen.
               </p>
@@ -501,11 +501,9 @@ export default function Page() {
                 <div className="w-full bg-white text-black py-9 px-[24px] lg:px-[60px] flex flex-col lg:flex-row mb-7 lg:mb-16">
                   <div className="lg:py-[24px] flex items-center justify-center gap-9 w-full lg:w-fit lg:pr-[54px] max-lg:pb-6 max-lg:border-b max-lg:border-b-lineLight">
                     <div className="flex flex-col items-center max-md:max-w-[120px]">
-                      <h3>{averageRating.toFixed(1)}</h3>
+                      <h3>{averageRating.toFixed(0)}/5</h3>
                       <p className="neue-montreal-text text-xs leading-[20px] text-center mb-8">
-                        {totalReviews > 0
-                          ? `Gebaseerd op ${totalReviews}+ Google reviews`
-                          : "Gebaseerd op Google reviews"}
+                        Laat jij ook een review achter?
                       </p>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
@@ -640,7 +638,7 @@ export default function Page() {
       <section className="bg-[#1F1F1F]">
         <div className="w-full h-full bg-[url('/images/home/arrows-bg-mobile.png')] md:bg-[url('/images/home/arrows-bg.png')] bg-no-repeat bg-top bg-cover">
           <div>
-            <div className="flex items-center justify-center md:min-h-[50vh]"/>
+            <div className="flex items-center justify-center min-h-[30vh] md:min-h-[50vh]"/>
             {/* logos slider */}
             <div className="pb-12 md:pb-[64px]">
               <Splide
@@ -690,7 +688,7 @@ export default function Page() {
         <div className="flex flex-col lg:flex-row lg:gap-[150px]">
           <div className="w-full px-4 md:px-16">
             <DotText text={"contact opnemen"} />
-            <h2 className="mb-12 lg:mb-[60px]">Vertel ons jouw plannen</h2>
+            <h2 className="mb-6 lg:mb-[60px]">Vertel ons jouw plannen</h2>
             <div className="mb-6 lg:mb-12 w-full h-px bg-line"></div>
             <div className="mb-7 lg:mb-[42px] neue-montreal-text text-xs md:text-[16px] leading-[22px] text-textLight">
               Of je nu klaar bent om een ​​nieuw project te starten of gewoon

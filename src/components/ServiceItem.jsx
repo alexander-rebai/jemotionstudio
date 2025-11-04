@@ -14,8 +14,8 @@ const ServiceItem = ({
   return (
     <div className="py-12 lg:py-[86px] grid lg:grid-cols-3 gap-9 lg:gap-[86px] border-t border-t-line">
       <div>
-        <h3 className="mb-12 lg:mb-[60px]">{title}</h3>
-        <p className="neue-montreal-text text-textLight lg:mb-[48px] md:leading-[26px] md:text-[18px] text-xs leading-[150%]">
+        <h3 className="mb-6 md:mb-8">{title}</h3>
+        <p className="neue-montreal-text text-textLight lg:mb-[48px] md:leading-[26px] md:text-[18px] text-xs leading-[150%] text-justify">
           <span className="text-primary/60">{highlight}</span>
           <span className={`${text2 && "hidden md:block"}`}>
             <br />
@@ -31,14 +31,14 @@ const ServiceItem = ({
           <ArrowButton text={button} href="#contact-form" />
         </div>
       </div>
-      <div>
-        <img src={image} alt="" className="w-full h-full" />
+      <div className="w-full lg:w-[462px] h-full lg:h-[308px]">
+        <img src={image} alt="" className="w-full h-full object-cover" />
       </div>
-      <div className="mx-auto text-justify">
+      <div className="mr-auto md:mx-auto text-justify lg:w-[310px]">
         {list.subtitle && (
           <DotText text={list.subtitle} margin={"mb-4 lg:mb-6"} />
         )}
-        <h6 className="mb-6 lg:mb-8">{list.title}</h6>
+        <h6 className="mb-6 lg:mb-8 !text-[18px]">{list.title}</h6>
         <ul className="neue-montreal-text text-xs leading-[20px] md:text-sm text-textLight">
           {list.items.map((item, index) => (
             <li

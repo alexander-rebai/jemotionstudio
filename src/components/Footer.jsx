@@ -14,7 +14,7 @@ const Footer = () => {
             <ApplicationLogo width="auto" height={"48px"} />
           </div>
           <div className="max-md:block hidden mb-16">
-            <ApplicationLogo height={"100%"} width={"100%"} />
+            <ApplicationLogo height={"100%"} width={"75%"} />
           </div>
           {/* <form className="max-w-[456px]">
             <input
@@ -93,7 +93,7 @@ const Footer = () => {
             <div className="w-full h-px bg-line mt-6 mb-8"></div>
 
             <div className="flex gap-[12px] md:gap-[18px] text-textLight">
-              <a href="">
+              {/* <a href="" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -107,8 +107,8 @@ const Footer = () => {
                     fill="#AED800"
                   />
                 </svg>
-              </a>
-              <a href="">
+              </a> */}
+              <a href="https://www.instagram.com/renovise_be/" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -124,7 +124,7 @@ const Footer = () => {
                 </svg>
               </a>
 
-              <a href="">
+              <a href="https://linkedin.com/company/renovise-be" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"

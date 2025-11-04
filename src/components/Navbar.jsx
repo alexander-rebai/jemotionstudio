@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="bg-transparent absolute top-0 z-50 w-full">
       <header className="hidden md:flex items-center justify-between px-16 py-8 ">
-        <ApplicationLogo />
+        <ApplicationLogo  width="auto" height={"24px"}  />
         <nav>
           <ul className="flex items-center gap-[67px] text-sm neue-montreal-text">
             <li>
@@ -49,7 +49,7 @@ const Navbar = () => {
 
         <div className="fixed inset-0 w-full h-full bg-bgBlack-300 group-has-[:checked]:max-w-full max-w-0 overflow-hidden transition-all duration-300 ease-in-out">
           <nav className="h-full p-4">
-            <ul className="flex flex-col items-start justify-center gap-4 h-full text-white neue-montreal-text text-lg">
+            <ul className="pt-36 flex flex-col items-center justify-start gap-4 h-full text-white neue-montreal-text text-lg">
               <li>
                 <a href="/renovatie">Renovatie</a>
               </li>

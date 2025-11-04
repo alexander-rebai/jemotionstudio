@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 
-const SelectField = ({ placeholder, options, id, name, value: propValue = "", onChange = () => {} }) => {
+const SelectField = ({
+  placeholder,
+  options,
+  id,
+  name,
+  value: propValue = "",
+  onChange = () => {},
+}) => {
   const [value, setValue] = useState(propValue);
 
   useEffect(() => {
@@ -25,12 +32,16 @@ const SelectField = ({ placeholder, options, id, name, value: propValue = "", on
       />
 
       <div
-        className={`bg-bgBlack-200 flex flex-col w-full absolute top-full left-0 z-40 group-has-[:focus]:max-h-[250px] max-h-0 overflow-hidden transition-all duration-200 border-x group-has-[:focus]:border-b border-line`}
+        className={`bg-bgBlack-200 flex flex-col w-full absolute top-full left-0 z-40
+              group-has-[:focus]:max-h-[250px] max-h-0 
+              overflow-y-auto group-has-[:focus]:overflow-y-auto
+              transition-all duration-200 border-x 
+              group-has-[:focus]:border-b border-line`}
       >
         {options.map((option, index) => (
           <div
             key={index}
-            className="px-8 py-2 cursor-pointer option"
+            className="px-8 py-2 cursor-pointer option hover:bg-bgBlack-100"
             onClick={() => selectValue(option)}
           >
             {option}

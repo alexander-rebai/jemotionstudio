@@ -7,18 +7,18 @@ import ImageItem from "@/components/ImageItem";
 
 export default function Page() {
   const images = [
-    "/images/realisaties/imgg.jpg",
-    "/images/realisaties/img2.jpg",
-    "/images/realisaties/img3.jpg",
-    "/images/realisaties/img4.jpg",
-    "/images/realisaties/img5.jpg",
-    "/images/realisaties/img6.jpg",
-    "/images/realisaties/img7.jpg",
-    "/images/realisaties/img8.jpg",
-    "/images/realisaties/img9.jpg",
-    "/images/realisaties/img10.jpg",
-    "/images/realisaties/img11.jpg",
-    "/images/realisaties/img12.jpg",
+    "/images/realisaties/imgg-min.jpg",
+    "/images/realisaties/img2-min.jpg",
+    "/images/realisaties/img3-min.jpg",
+    "/images/realisaties/img4-min.jpg",
+    "/images/realisaties/img5-min.jpg",
+    "/images/realisaties/img6-min.jpg",
+    "/images/realisaties/img7-min.jpg",
+    "/images/realisaties/img8-min.jpg",
+    "/images/realisaties/img9-min.jpg",
+    "/images/realisaties/img10-min.jpg",
+    "/images/realisaties/img11-min.jpg",
+    "/images/realisaties/img12-min.jpg",
   ];
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -69,7 +69,7 @@ export default function Page() {
     <>
       <div className="flex lg:pr-[64] lg:pl-[64] pl-[16] pr-[16] max-lg:flex-col">
         <div className="lg:pt-[260] pt-[184] max-w-[933] ">
-          <h1>
+          <h1 className="md:!text-[90px] !text-[48px] pr-0">
             Onze realisaties zeggen meer dan{" "}
             <span className="italic">woorden</span>
           </h1>
@@ -86,7 +86,7 @@ export default function Page() {
         <h4 className="text-textLight">
           Elke woning is uniek, elke klant heeft een eigen verhaal.
         </h4>
-        <hr className="lg:mt-[48] mt-[28] text-line" />
+        <hr className="lg:mt-6 mt-[28] text-line" />
         <div className="lg:pt-[64] pt-[36] grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 lg:gap-[24] gap-[16]">
           {images.map((image, index) => (
             <ImageItem 

@@ -30,7 +30,7 @@ export default function Page() {
     {
       title: "Duurzame technieken",
       highlight: "Word jij ook zelfvoorzienend?",
-      text: "Hernieuwbare energie wordt steeds meer toegankelijker.",
+      text: "Hernieuwbare energie wordt steeds toegankelijker.",
       text2: "Van zonnepanelen tot warmtepompen: we helpen je de perfecte oplossing te vinden voor jouw situatie.",
       button: "Vraag een offerte aan",
       image: "/images/renovatie/image-2.png",
@@ -49,7 +49,7 @@ export default function Page() {
     {
       title: "Totaal oplossingen",
       highlight: "Wil je meerdere projecten combineren? Wij nemen de efficiëntste route.",
-      text: "Wij zorgen voor de efficiëntste planning. Je krijgt transparante communicatie, een vaste contactpersoon en topservice waar je op kunt rekenen.",
+      text: "Wij zorgen voor de efficiëntste planning. Bij ons krijg je transparante, heldere communicatie, een vast contactpersoon en topservice waar je op kunt rekenen.",
       button: "Bespreek uw totaalrenovatie",
       image: "/images/renovatie/image-4.png",
       list: {
@@ -63,9 +63,9 @@ export default function Page() {
   ];
   return (
     <div>
-      <section className="min-h-[50vh] pt-[56px] md:pt-[115px] bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right bg-bgBlack-300">
-        <div className="lg:px-16 py-[100px] flex flex-col items-start lg:items-start text-start px-4">
-          <h1 className="max-w-[1000px] mb-7 lg:mb-[42px]">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right bg-bgBlack-300 md:px-16">
+        <div className="lg:mt-[100px] text-start flex flex-col items-start justify-center z-20 relative px-4 md:px-0 pr-0">
+          <h1 className="md:!text-[90px] !text-[48px] mb-7 lg:mb-[42px] max-w-[1000px]">
             Duurzaam renoveren met oog voor{" "}
             <span className="italic">comfort.</span>
           </h1>
@@ -109,7 +109,7 @@ export default function Page() {
         <div className="px-4 lg:px-16">
           <div className="text-center flex flex-col items-center">
             <DotText text="onze diensten" margin="mb-6 md:mb-6" />
-            <h2 className="mb-12 lg:mb-[60px]">Wat we voor jou doen</h2>
+            <h2 className="mb-6">Wat we voor jou doen</h2>
           </div>
 
           <div className="flex flex-col">
@@ -124,13 +124,18 @@ export default function Page() {
       {/* img section */}
       <section className="py-[80px] lg:py-[140px] min-h-[70vh] lg:min-h-[50vh] px-4 lg:px-16 flex lg:items-center relative">
         <img
-          src="/images/renovatie/image-5.png"
+          src="/images/renovatie/image-5-mobile.png"
           alt=""
-          className="absolute inset-0 w-full h-full z-[-1]"
+          className="absolute inset-0 w-full h-full z-[-1] block md:hidden object-fit"
         />
-        <div className="container mx-auto w-full flex justify-center max-lg:items-start max-lg:text-center lg:justify-end">
+        <img
+          src="/images/renovatie/image-5-desktop.png"
+          alt=""
+          className="absolute inset-0 w-full h-full z-[-1] hidden md:block object-fit"
+        />
+        <div className="container mx-auto w-full flex justify-center max-lg:items-start max-lg:text-center lg:justify-end lg:mb-24">
           <div className="flex flex-col justify-center items-center lg:items-start max-w-[375px]">
-            <h3 className="mb-5 lg:mb-12">
+            <h3 className="mb-6 lg:mb-8">
               Onze realisaties spreken voor zich.
             </h3>
             <ArrowButton text="Bekijk onze projecten" href="/realisaties" />
@@ -143,7 +148,7 @@ export default function Page() {
         <div className="flex flex-col lg:flex-row lg:gap-[150px]">
           <div className="w-full px-4 md:px-16">
             <DotText text={"contact opnemen"} />
-            <h2 className="mb-12 lg:mb-[60px]">Vertel ons jouw plannen</h2>
+            <h2 className="mb-6 lg:mb-[60px]">Vertel ons jouw plannen</h2>
             <div className="mb-6 lg:mb-12 w-full h-px bg-line"></div>
             <div className="mb-7 lg:mb-[42px] neue-montreal-text text-xs md:text-[16px] leading-[22px] text-textLight">
               Of je nu klaar bent om een ​​nieuw project te starten of gewoon

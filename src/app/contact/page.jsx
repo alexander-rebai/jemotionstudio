@@ -4,14 +4,13 @@ import ArrowButton from "@/components/ArrowButton";
 import ContactForm from "@/components/ContactForm";
 import DotText from "@/components/DotText";
 
-
 export default function Page() {
   return (
     <div>
-      <section className="pt-[56px] md:pt-[115px] px-4 lg:px-16 bg-bgBlack-300 text-white">
-        <div className="flex flex-col lg:flex-row justify-between items-start py-[100px] lg:py-[140px] gap-16 lg:gap-[130px]">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center bg-bgBlack-300 text-white md:px-16">
+        <div className="lg:mt-[100px] w-full flex flex-col lg:flex-row justify-between items-center gap-16 lg:gap-[130px] z-20 relative px-4 md:px-0 pt-26 md:pt-0">
           <div className="w-full max-lg:text-start">
-            <h1 className="mb-6">
+            <h1 className="md:!text-[90px] !text-[48px] mb-6">
               Vertel ons jouw <span className="italic">plannen</span>
             </h1>
             <p className="neue-montreal-text text-xs md:text-sm leading-[160%] lg:mb-[36px] mb-[36px]">
@@ -40,7 +39,7 @@ export default function Page() {
                 </svg>
                 <h6 className="lg:pb-5">
                   <span className="max-md:text-[20px]">
-                    Vrijblijven oriëntatiegesprek
+                    Vrijblijvend oriëntatiegesprek
                   </span>
                 </h6>
               </div>
@@ -108,7 +107,14 @@ export default function Page() {
       </section>
 
       {/* form section */}
-      <section className="bg-[#151515] px-4 py-16 lg:py-[140px] lg:bg-[url('/images/home/arrows-bg.png')] bg-no-repeat bg-bottom" id="contact-form">
+      <section
+        className="bg-[#151515] px-4 py-16 lg:py-[140px] bg-no-repeat bg-bottom bg-size-cover xl:bg-size-[100%_auto]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/images/home/arrows-bg.png)",
+        }}
+        id="contact-form"
+      >
         <div className="flex flex-col items-center">
           <DotText text="Klaar om te renoveren?" />
           <h2 className="mb-12">
@@ -145,7 +151,10 @@ export default function Page() {
               </div>
             </a>
             {/* email box  */}
-            <a href="mailto:info@renovise.be" className="max-lg:py-9 lg:px-9 max-lg:border-y lg:border-x border-line">
+            <a
+              href="mailto:info@renovise.be"
+              className="max-lg:py-9 lg:px-9 max-lg:border-y lg:border-x border-line"
+            >
               <div className="w-full lg:w-[140px] mx-auto flex flex-col items-center gap-8">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <svg
@@ -187,7 +196,7 @@ export default function Page() {
                 </div>
                 <h6>
                   <span className="text-[16px] md:text-[20px]">
-                  Coupure 88, 9000 GENT
+                    Coupure 88, 9000 GENT
                   </span>
                 </h6>
               </div>

@@ -19,7 +19,7 @@ const AboutAccordionItem = ({
             isActive ? "py-1 lg:py-4 pl-5 lg:pl-12 border-l-2" : "py-0"
           } border-l-primary transition-all duration-100 ease-in-out h-fit`}
         >
-          <h3 className="max-w-[80%]">{title}</h3>
+          <h3>{title}</h3>
         </div>
 
         {/* content */}
