@@ -8,6 +8,7 @@ import DotText from "@/components/DotText";
 import IconBox from "@/components/IconBox";
 import ReviewItem from "@/components/ReviewItem";
 import SliderSlide from "@/components/SliderSlide";
+import IntroVideo from "@/components/IntroVideo";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { useRef, useState, useEffect } from "react";
@@ -19,6 +20,7 @@ export default function Page() {
   const [averageRating, setAverageRating] = useState(4.9);
   const [totalReviews, setTotalReviews] = useState(120);
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
+  const [showIntro, setShowIntro] = useState(true);
   const slides = [
     {
       title: "Dak- en gevelwerken",
@@ -199,8 +201,10 @@ export default function Page() {
   const prevSlide = () => {
     sliderRef.current.splide.go("-1");
   };
+
   return (
     <div>
+      {showIntro && <IntroVideo onComplete={() => setShowIntro(false)} />}
       {/* hero  */}
       <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center home-hero md:px-16">
         {/* Background Video */}
