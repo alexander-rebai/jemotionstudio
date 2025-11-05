@@ -1,3 +1,5 @@
+"use client";
+
 import ApplicationLogo from "./ApplicationLogo";
 import ArrowButton from "./ArrowButton";
 

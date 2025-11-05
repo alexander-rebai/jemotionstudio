@@ -5,17 +5,32 @@ import { useEffect, useState } from "react";
 const IntroVideo = ({ onComplete }) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [shouldShow, setShouldShow] = useState(false);
 
   useEffect(() => {
-    // Prevent body scroll during animation
+    // Check if intro video has already been shown this session
+    const hasShownIntro = sessionStorage.getItem("introVideoShown");
+    
+    if (hasShownIntro) {
+      // Don't show the video, just call onComplete immediately
+      setIsHidden(true);
+      if (onComplete) onComplete();
+      return;
+    }
+
+    // Show the video and prevent body scroll during animation
+    setShouldShow(true);
     document.body.style.overflow = "hidden";
 
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, []);
+  }, [onComplete]);
 
   const handleVideoEnd = () => {
+    // Mark intro video as shown for this session
+    sessionStorage.setItem("introVideoShown", "true");
+    
     // Trigger curtain animation
     setIsAnimating(true);
     
@@ -27,11 +42,11 @@ const IntroVideo = ({ onComplete }) => {
     }, 1000); // 1s for curtain animation
   };
 
-  if (isHidden) return null;
+  if (isHidden || !shouldShow) return null;
 
   return (
     <div
-      className={`fixed inset-0 z-[100] bg-[#1B1B1B] flex items-center justify-center transition-transform duration-1000 ease-in-out ${
+      className={`fixed inset-0 z-[100] bg-bgBlack-300 lg:bg-[#1B1B1B] flex items-center justify-center transition-transform duration-1000 ease-in-out ${
         isAnimating ? "-translate-y-full" : "translate-y-0"
       }`}
     >
