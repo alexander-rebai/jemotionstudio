@@ -29,7 +29,7 @@ const Navbar = () => {
 
       <header className="flex md:hidden items-center justify-between p-4 group">
         <div className="z-10">
-          <ApplicationLogo width="auto" height={"24px"} />
+          <ApplicationLogo width="auto" height={"18px"} />
         </div>
 
         <label className="z-10">
