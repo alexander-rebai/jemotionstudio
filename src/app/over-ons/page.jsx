@@ -163,7 +163,7 @@ export default function Page() {
     <div className="bg-bgBlack-100">
       <section className="pt-[56px] md:pt-[115px] px-4 lg:px-0 bg-bgBlack-300">
         <div className="lg:px-16 flex flex-col items-start justify-center text-start py-16 md:py-[86px] pr-0">
-          <h1 className="mb-7 lg:mb-[42px] max-w-[1000px] md:!text-[90px] !text-[48px]">
+          <h1 className="mb-4 max-w-[1000px] md:!text-[90px] !text-[48px]">
             Renoveren
             <br />
             met onze <span className="italic">persoonlijke touch</span>

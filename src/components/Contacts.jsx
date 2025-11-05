@@ -14,8 +14,8 @@ const Contacts = () => {
             fill="#AED800"
           />
         </svg>
-        <a href="tel:+32472837540" className="text-textLight">
-          +32 472 83 75 40
+        <a href="tel:+32475221106" className="text-textLight">
+          +32 475 22 11 06
         </a>
       </li>
       <li className="flex gap-2.5 items-center">

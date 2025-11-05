@@ -39,7 +39,7 @@ export async function GET() {
     }
 
     // Fetch from Google Places API (New API)
-    const url = `https://places.googleapis.com/v1/places/${placeId}`;
+    const url = `https://places.googleapis.com/v1/places/${placeId}?language=nl`;
     
     const response = await fetch(url, {
       method: "GET",
@@ -98,7 +98,7 @@ export async function GET() {
 // Fallback to legacy Places API
 async function fetchLegacyAPI(apiKey, placeId) {
   try {
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&key=${apiKey}`;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&key=${apiKey}&language=nl`;
 
     const response = await fetch(url);
 

@@ -41,7 +41,7 @@ const IntroVideo = ({ onComplete }) => {
         playsInline
         preload="auto"
         onEnded={handleVideoEnd}
-        className="max-w-[60%] max-h-[60%] w-auto h-auto object-contain"
+        className="md:max-w-[30%] md:max-h-[30%] w-auto h-auto object-contain"
       >
         <source src="/final.mp4" type="video/mp4" />
       </video>

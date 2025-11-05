@@ -63,16 +63,16 @@ export default function Page() {
   ];
   return (
     <div>
-      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right bg-bgBlack-300 md:px-16">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-[right_22%] bg-bgBlack-300 md:px-16">
         <div className="lg:mt-[100px] text-start flex flex-col items-start justify-center z-20 relative px-4 md:px-0 pr-0">
-          <h1 className="md:!text-[90px] !text-[48px] mb-7 lg:mb-[42px] max-w-[1000px]">
+          <h1 className="md:!text-[90px] !text-[48px] mb-4 max-w-[1000px]">
             Duurzaam renoveren met oog voor{" "}
             <span className="italic">comfort.</span>
           </h1>
-          <p className="leading-[22px] text-xs md:text-sm neue-montreal-text mb-[42px] lg:mb-12">
+          <p className="leading-[22px] text-xs md:text-sm neue-montreal-text mb-[42px] lg:mb-8">
             Thuis begint bij een goed gevoel. Wij zorgen daarvoor.
           </p>
-          <ArrowButton text="Ontdek de mogelijkheden" href="/renovatie" />
+          <ArrowButton text="Ontdek de mogelijkheden" href="#services" />
         </div>
       </section>
       <section className="bg-bgBlack-300 px-4 sm:px-16 py-[85px]">
@@ -99,13 +99,13 @@ export default function Page() {
                 comfortabel zijn én morgen hun waarde behouden
               </span>
             </p>
-            <ArrowButton text="Minder kosten. Meer comfort." href="/over-ons" />
+            <ArrowButton text="Minder kosten. Meer comfort." href="#contact-form" />
           </div>
         </div>
       </section>
 
       {/* services section */}
-      <section>
+      <section id="services">
         <div className="px-4 lg:px-16">
           <div className="text-center flex flex-col items-center">
             <DotText text="onze diensten" margin="mb-6 md:mb-6" />

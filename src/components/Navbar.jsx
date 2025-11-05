@@ -26,7 +26,6 @@ const Navbar = () => {
       </header>
 
       <header className="flex md:hidden items-center justify-between p-4 group">
-        <div className="w-[20px]"/>
         <div className="z-10">
           <ApplicationLogo width="auto" height={"24px"} />
         </div>

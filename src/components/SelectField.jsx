@@ -42,6 +42,7 @@ const SelectField = ({
           <div
             key={index}
             className="px-8 py-2 cursor-pointer option hover:bg-bgBlack-100"
+            onMouseDown={(e) => e.preventDefault()}
             onClick={() => selectValue(option)}
           >
             {option}

@@ -260,10 +260,10 @@ export default function Page() {
         </div>
       </section>
       <section
-        className="bg-bgBlack-300 px-4 sm:px-16 py-[85px]"
+        className="bg-bgBlack-300 px-4 sm:px-16 py-[85px] lg:h-[105vh]"
         id="section-2"
       >
-        <h3 className="text-center mb-12 md:mb-[85px]">
+        <h3 className="text-center mb-[85px]">
           Slim georganiseerd. 
           <br className="block md:hidden" />
           <span className="hidden md:inline">{" "}</span>
@@ -282,7 +282,7 @@ export default function Page() {
           <div className="bg-line w-px hidden lg:block self-stretch"></div>
           <div className="w-full lg:flex-1 lg:pl-[86px] justify-center flex flex-col ">
             <DotText text={"over ons"} />
-            <p className="text-[16px] md:text-[21px] mb-4 text-justify">
+            <p className="text-[16px] md:text-[21px] mb-6 md:mb-[36px] text-justify">
               Renovise is jouw ervaren aannemer in renovatie en
               energieoplossingen.
               <span className="block my-6"></span>
@@ -308,7 +308,7 @@ export default function Page() {
         className="pb-[100px] md:pb-[160px] px-4 sm:pl-16 pr-0 w-full bg-bgBlack-300 overflow-x-hidden"
       >
         <DotText text="onze diensten" />
-        <h2 className="mb-6 md:mb-12">Wat we voor jou doen</h2>
+        <h2 className="mb-6 md:mb-8">Wat we voor jou doen</h2>
         <div className="w-full h-px bg-line mb-9 md:mb-[60px]"></div>
         <Splide
           ref={sliderRef}

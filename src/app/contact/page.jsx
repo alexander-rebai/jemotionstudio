@@ -127,7 +127,7 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 text-[#FAF5ED] text-center max-lg:w-full max-lg:max-w-[200px]">
             {/* phone box  */}
-            <a href="tel:+32472837540" className="max-lg:py-9 lg:px-9 ">
+            <a href="tel:+32475221106" className="max-lg:py-9 lg:px-9 ">
               <div className="w-full lg:w-[140px] mx-auto flex flex-col items-center gap-8">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <svg
@@ -145,7 +145,7 @@ export default function Page() {
                 </div>
                 <h6>
                   <span className="text-[16px] md:text-[20px]">
-                    +32 472 83 75 40
+                    +32 475 22 11 06
                   </span>
                 </h6>
               </div>

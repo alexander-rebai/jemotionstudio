@@ -7,8 +7,18 @@ const ArrowButton = ({
   onclick = () => {},
   href = "",
 }) => {
+  const handleClick = (e) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return href ? (
-    <a href={href}>
+    <a href={href} onClick={handleClick}>
       <button
         style={{ background: background, width: width }}
         className="flex items-center justify-center gap-1.5 px-6 h-[51px] rounded-full text-black neue-montreal-text text-xs md:text-sm cursor-pointer hover:brightness-90"
