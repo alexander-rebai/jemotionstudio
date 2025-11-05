@@ -63,7 +63,7 @@ export default function Page() {
   ];
   return (
     <div>
-      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-[right_22%] bg-bgBlack-300 md:px-16">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right md:bg-[right_22%] bg-bgBlack-300 md:px-16">
         <div className="lg:mt-[100px] text-start flex flex-col items-start justify-center z-20 relative px-4 md:px-0 pr-0">
           <h1 className="md:!text-[90px] !text-[48px] mb-4 max-w-[1000px]">
             Duurzaam renoveren met oog voor{" "}

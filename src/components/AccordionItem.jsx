@@ -11,7 +11,7 @@ const AccordionItem = ({
   return (
     <div
       onClick={() => setActiveAccordion()}
-      className="cursor-pointer relative grid lg:grid-cols-4 items-start justify-between gap-7 lg:gap-4 border-b border-b-line py-12 md:py-16 transition-all duration-150 ease-in-out"
+      className="cursor-pointer relative grid lg:grid-cols-4 items-start justify-between gap-7 lg:gap-4 border-b border-b-line py-10 md:py-16 transition-all duration-150 ease-in-out"
     >
       {/* left side  */}
       <div
