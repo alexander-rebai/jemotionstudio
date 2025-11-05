@@ -20,7 +20,16 @@ export default function Page() {
   const [averageRating, setAverageRating] = useState(4.9);
   const [totalReviews, setTotalReviews] = useState(120);
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
-  const [showIntro, setShowIntro] = useState(true);
+  const [shouldShowIntro, setShouldShowIntro] = useState(true);
+
+  useEffect(() => {
+    // Check if intro should be shown after component mounts
+    const hasShown = document.documentElement.getAttribute("data-intro-shown");
+    if (hasShown === "true") {
+      setShouldShowIntro(false);
+    }
+  }, []);
+
   const slides = [
     {
       title: "Dak- en gevelwerken",
@@ -204,7 +213,7 @@ export default function Page() {
 
   return (
     <div>
-      {showIntro && <IntroVideo onComplete={() => setShowIntro(false)} />}
+      {shouldShowIntro && <IntroVideo onComplete={() => setShouldShowIntro(false)} />}
       {/* hero  */}
       <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center home-hero md:px-16">
         {/* Background Video */}

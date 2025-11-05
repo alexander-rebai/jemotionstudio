@@ -314,3 +314,8 @@ section .splide__arrow {
   font-weight: 700;
   font-style: italic;
 }
+
+/* Intro Video Control - Hide when already shown */
+html[data-intro-shown="true"] .intro-video {
+  display: none !important;
+}

@@ -5,7 +5,7 @@ import { Resend } from "resend";
 const resend_api_key = process.env.RESEND_API_KEY;
 const resend = resend_api_key ? new Resend(resend_api_key) : null;
 const resendFrom = "Renovise LEADS <renovise@mail.leveragelabs.io>";
-const resendRecipient = "renovise@info.be";
+const resendRecipient = "info@renovise.be";
 
 export async function POST(request) {
   try {

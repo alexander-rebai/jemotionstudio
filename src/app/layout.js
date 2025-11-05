@@ -2,6 +2,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 
 export const metadata = {
@@ -24,10 +25,31 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`antialiased`}
       >
+        <Script
+          id="intro-video-check"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var hasShown = sessionStorage.getItem('introVideoShown');
+                  if (hasShown === 'true') {
+                    document.documentElement.setAttribute('data-intro-shown', 'true');
+                  } else {
+                    document.documentElement.setAttribute('data-intro-shown', 'false');
+                  }
+                } catch (e) {
+                  // Fallback if sessionStorage is not available
+                  document.documentElement.setAttribute('data-intro-shown', 'false');
+                }
+              })();
+            `,
+          }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

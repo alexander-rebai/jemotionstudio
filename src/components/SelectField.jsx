@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const SelectField = ({
   placeholder,
@@ -9,18 +9,41 @@ const SelectField = ({
   onChange = () => {},
 }) => {
   const [value, setValue] = useState(propValue);
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     setValue(propValue);
   }, [propValue]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   const selectValue = (option) => {
     setValue(option);
     onChange({ target: { name, value: option } });
+    setIsOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
-    <div className="relative w-full group">
+    <div className="relative w-full group" ref={containerRef}>
       <input
         type="text"
         placeholder={placeholder}
@@ -29,20 +52,20 @@ const SelectField = ({
         value={value}
         id={id ? id : name}
         name={name}
+        onClick={toggleDropdown}
       />
 
       <div
         className={`bg-bgBlack-200 flex flex-col w-full absolute top-full left-0 z-40
-              group-has-[:focus]:max-h-[250px] max-h-0 
-              overflow-y-auto group-has-[:focus]:overflow-y-auto
+              ${isOpen ? "max-h-[250px]" : "max-h-0"} 
+              overflow-y-auto
               transition-all duration-200 border-x 
-              group-has-[:focus]:border-b border-line`}
+              ${isOpen ? "border-b" : ""} border-line`}
       >
         {options.map((option, index) => (
           <div
             key={index}
             className="px-8 py-2 cursor-pointer option hover:bg-bgBlack-100"
-            onMouseDown={(e) => e.preventDefault()}
             onClick={() => selectValue(option)}
           >
             {option}
@@ -51,7 +74,7 @@ const SelectField = ({
       </div>
 
       <div
-        className={`absolute right-0 top-1.5 group-has-[:focus]:rotate-180 transition-all duration-200`}
+        className={`absolute right-0 top-1.5 ${isOpen ? "rotate-180" : ""} transition-all duration-200 pointer-events-none`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

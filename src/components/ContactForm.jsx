@@ -97,7 +97,7 @@ const ContactForm = ({ fullWidthButton = false , ctaText = "Vraag jouw offerte a
         <SelectField
           placeholder={"Budget indicatie"}
           options={[
-            "€100.000",
+            "<€100.000",
             "Tussen €100.000 - 150.000",
             "Tussen €150.000 - 200.000",
             "Tussen €200.000 - 300.000",
