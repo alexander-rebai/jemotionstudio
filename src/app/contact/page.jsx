@@ -196,7 +196,7 @@ export default function Page() {
                 </div>
                 <h6>
                   <span className="text-[16px] md:text-[20px]">
-                    Coupure 88, 9000 GENT
+                    Coupure Rechts 88, 9000 GENT
                   </span>
                 </h6>
               </div>

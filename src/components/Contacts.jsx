@@ -49,7 +49,7 @@ const Contacts = () => {
           />
         </svg>
         <a href="#" className="text-textLight">
-          Coupure 88, 9000 GENT
+          Coupure Rechts 88, 9000 GENT
         </a>
       </li>
     </ul>
