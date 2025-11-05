@@ -39,8 +39,9 @@ const IntroVideo = ({ onComplete }) => {
         autoPlay
         muted
         playsInline
+        preload="auto"
         onEnded={handleVideoEnd}
-        className="w-full h-full object-contain"
+        className="max-w-[60%] max-h-[60%] w-auto h-auto object-contain"
       >
         <source src="/final.mp4" type="video/mp4" />
       </video>
