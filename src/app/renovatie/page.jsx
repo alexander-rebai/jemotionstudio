@@ -63,7 +63,17 @@ export default function Page() {
   ];
   return (
     <div>
-      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right md:bg-[right_22%] bg-bgBlack-300 md:px-16">
+      <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center md:px-16">
+        {/* Background Image */}
+        <img
+          src="/images/renovatie/renovatie-hero.png"
+          alt="Hero background"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+
         <div className="lg:mt-[100px] text-start flex flex-col items-start justify-center z-20 relative px-4 md:px-0 pr-0">
           <h1 className="md:!text-[90px] !text-[48px] mb-4 max-w-[1000px]">
             Duurzaam renoveren met oog voor{" "}
@@ -75,32 +85,21 @@ export default function Page() {
           <ArrowButton text="Ontdek de mogelijkheden" href="#services" />
         </div>
       </section>
-      <section className="bg-bgBlack-300 px-4 sm:px-16 py-[85px]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch relative">
-          <div className="w-full lg:flex-1 flex items-center lg:pr-[86px]">
-            <img
-              src="/images/renovatie/image-1.png"
-              alt=""
-              className="w-full h-full lg:min-h-[412px] lg:object-contain"
-            />
-          </div>
-          <div className="bg-line w-full h-px block lg:hidden my-12"></div>
-          <div className="bg-line w-px hidden lg:block self-stretch"></div>
-          <div className="w-full lg:flex-1 lg:pl-[86px] justify-center flex flex-col">
-            <h3 className="mb-6">Waarom renoveren?</h3>
-            <p className="text-[16px] md:text-[21px] mb-6 text-justify">
-              Een renovatie biedt direct tastbare voordelen: lagere
-              energiekosten, aangenamer klimaat en een hogere verkoopwaarde. De
-              vraag is niet óf het loont, maar hoe je het strategisch aanpakt
-              <span className="block my-6"></span>
-              <span className="text-textLight">
-                Bij Renovise combineren we bouwkundige kennis met
-                energie-expertise. Zo creëren we woningen die vandaag
-                comfortabel zijn én morgen hun waarde behouden
-              </span>
-            </p>
-            <ArrowButton text="Minder kosten. Meer comfort." href="#contact-form" />
-          </div>
+      <section className="bg-bgBlack-300 bg-[url('/images/renovatie/arrow-bg-green.png')] bg-no-repeat bg-top-right md:bg-[right_22%] px-4 md:px-16 py-[85px] h-screen flex flex-col items-start justify-center">
+        <div className="max-w-[650px]">
+          <h3 className="mb-6">Waarom renoveren?</h3>
+          <p className="text-[16px] md:text-[21px] mb-6 text-justify">
+            Een renovatie biedt direct tastbare voordelen: lagere
+            energiekosten, aangenamer klimaat en een hogere verkoopwaarde. De
+            vraag is niet óf het loont, maar hoe je het strategisch aanpakt
+            <span className="block my-6"></span>
+            <span className="text-textLight">
+              Bij Renovise combineren we bouwkundige kennis met
+              energie-expertise. Zo creëren we woningen die vandaag
+              comfortabel zijn én morgen hun waarde behouden
+            </span>
+          </p>
+          <ArrowButton text="Minder kosten. Meer comfort." href="#contact-form" />
         </div>
       </section>
 
@@ -138,7 +137,7 @@ export default function Page() {
             <h3 className="mb-6 lg:mb-8">
               Onze realisaties spreken voor zich.
             </h3>
-            <ArrowButton text="Bekijk onze projecten" href="/realisaties" />
+            {/* <ArrowButton text="Bekijk onze projecten" href="/realisaties" /> */}
           </div>
         </div>
       </section>

@@ -13,9 +13,9 @@ const Navbar = () => {
             <li>
               <a href="/renovatie">Renovatie</a>
             </li>
-            <li>
+            {/* <li>
               <a href="/realisaties">Realisaties</a>
-            </li>
+            </li> */}
             <li>
               <a href="/over-ons">Over ons</a>
             </li>
@@ -54,9 +54,9 @@ const Navbar = () => {
               <li>
                 <a href="/renovatie">Renovatie</a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/realisaties">Realisaties</a>
-              </li>
+              </li> */}
               <li>
                 <a href="/over-ons">Over ons</a>
               </li>

@@ -204,7 +204,7 @@ export default function Page() {
           <div className="flex flex-col lg:flex-row justify-between gap-[54px] lg:gap-4">
             <div className="w-full flex flex-col items-center lg:items-start text-center">
               <h2 className="mb-6 lg:mb-[120px]">Onze troeven</h2>
-              <ArrowButton text="Ontdek onze realisaties" href="/realisaties" />
+              {/* <ArrowButton text="Ontdek onze realisaties" href="/renovatie" /> */}
             </div>
             <div className="w-full flex flex-col gap-[50px] lg:gap-[42px] max-lg:items-center">
               {iconBoxData.map((item, index) => (

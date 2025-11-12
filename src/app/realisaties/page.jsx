@@ -65,6 +65,11 @@ export default function Page() {
     );
   }
 
+  // COMMENTED OUT - Page temporarily hidden but code preserved for future use
+  return null;
+
+  // Uncomment below to restore the Realisaties page:
+  /*
   return (
     <>
       <div className="flex lg:pr-[64] lg:pl-[64] pl-[16] pr-[16] max-lg:flex-col">
@@ -89,22 +94,20 @@ export default function Page() {
         <hr className="lg:mt-6 mt-[28] text-line" />
         <div className="lg:pt-[64] pt-[36] grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 lg:gap-[24] gap-[16]">
           {images.map((image, index) => (
-            <ImageItem 
-              image={image} 
-              key={index} 
+            <ImageItem
+              image={image}
+              key={index}
               onClick={() => setSelectedImageIndex(index)}
             />
           ))}
         </div>
         <p className="mt-4 text-white neue-montreal-text text-[18px]">Totaalproject Destelbergen |<span className="text-textLight"> energetische renovatie</span></p>
         <div className="lg:pt-[76] pt-[54] lg:pb-[140] pb-[100] flex justify-center">
-          {/* <ArrowButton text="bekijk meer" width="215px" /> */}
         </div>
       </div>
 
-      {/* Lightbox Modal with Navigation */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
           onClick={() => setSelectedImageIndex(null)}
         >
@@ -115,8 +118,7 @@ export default function Page() {
           >
             ×
           </button>
-          
-          {/* Previous Button */}
+
           <button
             className="absolute left-4 text-white text-5xl hover:text-gray-300 transition z-10 p-4"
             onClick={(e) => {
@@ -128,7 +130,6 @@ export default function Page() {
             ‹
           </button>
 
-          {/* Next Button */}
           <button
             className="absolute right-4 text-white text-5xl hover:text-gray-300 transition z-10 p-4"
             onClick={(e) => {
@@ -150,4 +151,5 @@ export default function Page() {
       )}
     </>
   );
+  */
 }

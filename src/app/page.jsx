@@ -32,24 +32,19 @@ export default function Page() {
 
   const slides = [
     {
-      title: "Dak- en gevelwerken",
+      title: "Energetische renovaties",
       subtitle: "Perfecte isolatie begint aan de buitenkant",
       image: "/images/home/slider-1.png",
     },
     {
-      title: "Ramen en deuren",
+      title: "Duurzame technieken",
       subtitle: "Minder warmteverlies, meer comfort en stijl",
       image: "/images/home/slider-2.png",
     },
     {
-      title: "Energie en technieken",
-      subtitle: "Zonnepanelen, thuisbatterijen en warmtepompen",
-      image: "/images/home/slider-3.jpeg",
-    },
-    {
       title: "Totaal oplossingen",
       subtitle: "Volledige ontzorging van A tot Z",
-      image: "/images/home/slider-4.jpeg",
+      image: "/images/home/slider-3.png"  ,
     },
   ];
 
@@ -216,16 +211,12 @@ export default function Page() {
       {shouldShowIntro && <IntroVideo onComplete={() => setShouldShowIntro(false)} />}
       {/* hero  */}
       <section className="relative h-screen w-full overflow-hidden flex flex-col items-center md:items-start justify-center home-hero md:px-16">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Background Image */}
+        <img
+          src="/images/home/main-hero.png"
+          alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/images/home/hero.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Overlay for better text readability (optional) */}
         <div className="absolute inset-0 bg-black/30 z-10"></div>
@@ -280,16 +271,14 @@ export default function Page() {
         </h3>
 
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch relative">
-          <div className="w-full lg:flex-1 flex items-center lg:pr-[86px]">
+          <div className="w-full lg:flex-1 flex items-center lg:pr-[38px]">
             <img
               src="/images/home/image-1.png"
               alt=""
-              className="w-full h-full lg:min-h-[412px] lg:object-contain"
+              className="w-full h-full lg:min-h-[412px] lg:object-cover"
             />
           </div>
-          <div className="bg-line w-full h-px block lg:hidden my-12"></div>
-          <div className="bg-line w-px hidden lg:block self-stretch"></div>
-          <div className="w-full lg:flex-1 lg:pl-[86px] justify-center flex flex-col ">
+          <div className="w-full lg:flex-1 lg:pl-[38px] justify-center flex flex-col ">
             <DotText text={"over ons"} />
             <p className="text-[16px] md:text-[21px] mb-6 md:mb-[36px] text-justify">
               Renovise is jouw ervaren aannemer in renovatie en
@@ -354,7 +343,7 @@ export default function Page() {
               </p>
               <ArrowButton
                 text="Bekijk alle mogelijkheden"
-                href="/realisaties"
+                href="/renovatie"
               />
               <div id="desktop-buttons" className="splide__arrows mt-auto">
                 <button
