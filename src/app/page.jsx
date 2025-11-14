@@ -278,7 +278,7 @@ export default function Page() {
               className="w-full h-full lg:min-h-[412px] lg:object-cover"
             />
           </div>
-          <div className="w-full lg:flex-1 lg:pl-[38px] justify-center flex flex-col ">
+          <div className="w-full lg:flex-1 lg:pl-[38px] justify-center flex flex-col mt-12 md:mt-0">
             <DotText text={"over ons"} />
             <p className="text-[16px] md:text-[21px] mb-6 md:mb-[36px] text-justify">
               Renovise is jouw ervaren aannemer in renovatie en
