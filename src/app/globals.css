@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #aed800;
-  --bgBlack-100: #212121;
-  --bgBlack-200: #1f1f1f;
-  --bgBlack-300: #1a1a1a;
-  --textLight: #ffffff80;
-  --textLightWhite: #646463;
-  --color-line: #ffffff1f;
-  --color-lineLight: #1a1a1a1f;
+  /* JeMotionStudio Color Palette */
+  --color-cream: #F7F4F0;
+  --color-beige: #E8E2DA;
+  --color-warm: #D4C8BA;
+  --color-rust: #7A3321;
+  --color-rust-dark: #5C2619;
+  --color-charcoal: #2C2C2C;
+  --color-charcoal-light: #4A4A4A;
+  --color-white: #FFFFFF;
+  --color-line: rgba(44, 44, 44, 0.12);
+  --color-lineLight: rgba(44, 44, 44, 0.08);
+
+  /* Font families */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing system */
+  --navbar-height: 64px;
+  --section-padding-y: 5rem;
+  --section-padding-y-lg: 7rem;
+  --container-padding-x: 1.5rem;
+  --container-padding-x-md: 2rem;
+  --container-padding-x-lg: 3rem;
 }
 
 @theme {
-  --color-primary: var(--primary);
-  --color-bgBlack-100: var(--bgBlack-100);
-  --color-bgBlack-200: var(--bgBlack-200);
-  --color-bgBlack-300: var(--bgBlack-300);
-  --color-textLight: var(--textLight);
-  --color-textLightWhite: var(--textLightWhite);
+  --color-cream: var(--color-cream);
+  --color-beige: var(--color-beige);
+  --color-warm: var(--color-warm);
+  --color-rust: var(--color-rust);
+  --color-rust-dark: var(--color-rust-dark);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-light: var(--color-charcoal-light);
   --color-line: var(--color-line);
   --color-lineLight: var(--color-lineLight);
-  --font-neue-montreal: "Neue Montreal";
 }
 
 html {
@@ -28,294 +43,111 @@ html {
 }
 
 body {
-  font-family: "PP Editorial New", sans-serif;
-  font-weight: 200;
-  font-style: ultralight;
-  background-color: var(--bgBlack-300);
-  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 300;
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  line-height: 1.7;
+  font-size: 16px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "PP Editorial New", sans-serif;
-  font-weight: 200;
-  font-style: ultralight;
-  leading-trim: cap-height;
-  letter-spacing: -2%;
-}
-
-h1 {
-  font-size: 96px;
-  line-height: 82px;
-}
-
-h2 {
-  font-size: 64px;
-  line-height: 72px;
-}
-
-h3 {
-  font-size: 42px;
-  line-height: 48px;
-}
-
-h4 {
-  font-size: 36px;
-  line-height: 70px;
-}
-
-h6 {
-  font-size: 24px;
-}
-
-input {
-  font-family: "Neue Montreal", sans-serif;
-  font-weight: 400;
-  letter-spacing: 2%;
-  line-height: 22px;
-  font-size: 14px;
-  border: none;
-  border-bottom: 1px solid var(--color-line);
-  padding-bottom: 24px;
-  width: 100%;
-}
-
-.option {
-  font-family: "Neue Montreal", sans-serif;
-  font-weight: 400;
-  letter-spacing: 2%;
-  line-height: 22px;
-  font-size: 14px;
-  background: var(--bgBlack-200);
-  color: #fff;
-}
-
-.option:hover {
-  background: var(--bgBlack-100);
-}
-
-input::placeholder {
-  color: #ffffff3b;
-  font-family: "Neue Montreal", sans-serif;
-  font-weight: 400;
-  letter-spacing: 2%;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-input:focus {
-  outline: none;
-  border-bottom: 1px solid var(--primary);
-}
-select:focus {
-  outline: none;
-  border-bottom: 1px solid var(--primary);
-}
-
-.dot {
-  @apply w-1.5 h-1.5 bg-[#AFD802] rounded-full;
-}
-
-.neue-montreal-text {
-  font-family: "Neue Montreal", sans-serif;
-  font-weight: 400;
-  letter-spacing: 2%;
-}
-
-.home-hero {
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(26, 26, 26, 0.6) 2.8%,
-      rgba(26, 26, 26, 0) 61.12%,
-      rgba(26, 26, 26, 0) 61.18%,
-      rgba(26, 26, 26, 0.6) 100%
-    ),
-    linear-gradient(0deg, rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0.2)),
-    url("/images/home/hero-section.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-section .splide__arrow {
-  background-color: transparent;
-  border-radius: 9999px;
-  border: 1px solid #ffffff99;
-  height: 60px;
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-#slider-section .splide__arrows {
-  display: flex;
-  gap: 12px;
-}
-
-@media screen and (min-width: 1024px) {
-  #slider-section #mobile-buttons.splide__arrows {
-    display: none;
+/* Typography */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-charcoal);
   }
-}
-@media screen and (max-width: 1023px) {
-  #slider-section #desktop-buttons.splide__arrows {
-    display: none;
-  }
-}
 
-@media screen and (max-width: 767px) {
   h1 {
-    font-size: 64px;
-    line-height: 85%;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
   }
 
   h2 {
-    font-size: 42px;
-    line-height: 62px;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
   }
 
   h3 {
-    font-size: 24px;
-    line-height: 110%;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 500;
   }
 
-  h4 {
-    font-size: 24px;
-    line-height: 130%;
-  }
-
-  h6 {
-    font-size: 16px;
-  }
-
-  input {
-    padding-bottom: 18px;
+  p {
+    color: var(--color-charcoal-light);
   }
 }
 
-@font-face {
-  font-family: "PP Editorial New";
-  src: url("/fonts/PP-editorial-new/PPEditorialNew-Regular.otf")
-    format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "PP Editorial New";
-  src: url("/fonts/PP-editorial-new/PPEditorialNew-Italic.otf")
-    format("opentype");
-  font-weight: 400;
+.italic {
   font-style: italic;
 }
 
-@font-face {
-  font-family: "PP Editorial New";
-  src: url("/fonts/PP-editorial-new/PPEditorialNew-Ultralight.otf")
-    format("opentype");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "PP Editorial New";
-  src: url("/fonts/PP-editorial-new/PPEditorialNew-UltralightItalic.otf")
-    format("opentype");
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "PP Editorial New";
-  src: url("/fonts/PP-editorial-new/PPEditorialNew-Ultrabold.otf")
-    format("opentype");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "PP Editorial New";
-  src: url("/fonts/PP-editorial-new/PPEditorialNew-UltraboldItalic.otf")
-    format("opentype");
-  font-weight: 800;
-  font-style: italic;
-}
-
-/* Regular */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Italic */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-Italic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-}
-
-/* Light */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-Light.otf") format("opentype");
+.font-light {
   font-weight: 300;
-  font-style: normal;
 }
 
-/* Light Italic */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-LightItalic.otf")
-    format("opentype");
+.font-bold {
+  font-weight: 700;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  border: 1px solid var(--color-beige);
+  background: var(--color-white);
+  padding: 1rem;
+  width: 100%;
+  color: var(--color-charcoal);
+  transition: border-color 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-charcoal-light);
+  opacity: 0.6;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-rust);
+}
+
+/* Utility Classes */
+.dot {
+  @apply w-1.5 h-1.5 rounded-full;
+  background-color: var(--color-rust);
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-rust);
+}
+
+.body-text {
+  font-family: var(--font-body);
   font-weight: 300;
-  font-style: italic;
 }
 
-/* Medium */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* Medium Italic */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-MediumItalic.otf")
-    format("opentype");
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Bold */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* Bold Italic */
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("/fonts/neue-montreal/NeueMontreal-BoldItalic.otf")
-    format("opentype");
-  font-weight: 700;
-  font-style: italic;
-}
-
-/* Intro Video Control - Hide when already shown */
-html[data-intro-shown="true"] .intro-video {
-  display: none !important;
+/* Responsive Typography */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 15px;
+  }
 }

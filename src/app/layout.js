@@ -1,19 +1,16 @@
-
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Script from "next/script";
-
 
 export const metadata = {
-  title: "Renovise",
-  description: "Renovise coördineert alles zodat elk onderdeel perfect bij elkaar past. Met één aanspreekpunt en een doordacht traject bouwen we aan een woning die stijgt in comfort, daalt in energieverbruik en futureproof is voor de komende generaties.",
+  title: "JeMotion Studio | Kinesitherapie & Osteopathie",
+  description: "Herstel jouw natuurlijke balans. Een holistische benadering van beweging en welzijn. Wij combineren kinesitherapie en osteopathie voor duurzaam herstel.",
 
   openGraph: {
-    title: "Renovise",
-    description: "Renovise coördineert alles zodat elk onderdeel perfect bij elkaar past. Met één aanspreekpunt en een doordacht traject bouwen we aan een woning die stijgt in comfort, daalt in energieverbruik en futureproof is voor de komende generaties.",
-    url: "https://renovise.be",
-    siteName: "Renovise",
+    title: "JeMotion Studio | Kinesitherapie & Osteopathie",
+    description: "Herstel jouw natuurlijke balans. Een holistische benadering van beweging en welzijn.",
+    url: "https://jemotionstudio.be",
+    siteName: "JeMotion Studio",
     locale: "nl_BE",
     type: "website",
   },
@@ -25,31 +22,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`antialiased`}
-      >
-        <Script
-          id="intro-video-check"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var hasShown = sessionStorage.getItem('introVideoShown');
-                  if (hasShown === 'true') {
-                    document.documentElement.setAttribute('data-intro-shown', 'true');
-                  } else {
-                    document.documentElement.setAttribute('data-intro-shown', 'false');
-                  }
-                } catch (e) {
-                  // Fallback if sessionStorage is not available
-                  document.documentElement.setAttribute('data-intro-shown', 'false');
-                }
-              })();
-            `,
-          }}
+    <html lang="nl" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
         />
+      </head>
+      <body className="antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

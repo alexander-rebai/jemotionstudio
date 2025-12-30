@@ -1,73 +1,94 @@
 "use client";
 
+import { useState } from "react";
 import ApplicationLogo from "./ApplicationLogo";
 import ArrowButton from "./ArrowButton";
 
 const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#over", label: "Over Ons" },
+    { href: "#diensten", label: "Diensten" },
+  ];
+
   return (
-    <div className="bg-transparent absolute top-0 z-50 w-full">
-      <header className="hidden md:flex items-center justify-between px-16 py-8 ">
-        <ApplicationLogo  width="auto" height={"24px"}  />
-        <nav>
-          <ul className="flex items-center gap-[67px] text-sm neue-montreal-text">
-            <li>
-              <a href="/renovatie">Renovatie</a>
+    <nav className="bg-cream">
+      {/* Desktop Header */}
+      <header className="hidden md:flex items-center justify-between px-8 lg:px-16 py-4">
+        <ApplicationLogo height="40px" />
+        <ul className="flex items-center gap-10 lg:gap-14">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="text-charcoal-light hover:text-charcoal transition-colors duration-300 uppercase tracking-[0.15em] text-xs font-medium relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-rust after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {link.label}
+              </a>
             </li>
-            {/* <li>
-              <a href="/realisaties">Realisaties</a>
-            </li> */}
-            <li>
-              <a href="/over-ons">Over ons</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <ArrowButton text="Gratis offerte" background="white" href="/contact" />
+          ))}
+        </ul>
+        <ArrowButton text="Contact" href="#contact" />
       </header>
 
-      <header className="flex md:hidden items-center justify-between p-4 group">
-        <div className="z-10">
-          <ApplicationLogo width="auto" height={"18px"} />
+      {/* Mobile Header */}
+      <header className="flex md:hidden items-center justify-between px-6 py-4">
+        <div className="z-50">
+          <ApplicationLogo height="36px" />
         </div>
 
-        <label className="z-10">
+        <button
+          className="z-50 p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="14"
-            viewBox="0 0 20 14"
+            width="24"
+            height="16"
+            viewBox="0 0 24 16"
             fill="none"
           >
             <path
-              d="M0.664062 1.16667V0H19.3307V1.16667H0.664062ZM0.664062 14V12.8333H19.3307V14H0.664062ZM0.664062 7.58333V6.41667H19.3307V7.58333H0.664062Z"
-              fill="white"
+              d={mobileMenuOpen
+                ? "M2 2L22 14M2 14L22 2"
+                : "M0 1V0H24V1H0ZM0 16V15H24V16H0ZM0 8.5V7.5H24V8.5H0Z"
+              }
+              stroke="#2C2C2C"
+              strokeWidth={mobileMenuOpen ? "2" : "0"}
+              fill={mobileMenuOpen ? "none" : "#2C2C2C"}
             />
           </svg>
-          <input type="checkbox" hidden />
-        </label>
+        </button>
 
-        <div className="fixed inset-0 w-full h-full bg-bgBlack-300 group-has-[:checked]:max-w-full max-w-0 overflow-hidden transition-all duration-300 ease-in-out">
-          <nav className="h-full p-4">
-            <ul className="pt-36 flex flex-col items-center justify-start gap-4 h-full text-white neue-montreal-text text-lg">
-              <li>
-                <a href="/renovatie">Renovatie</a>
-              </li>
-              {/* <li>
-                <a href="/realisaties">Realisaties</a>
-              </li> */}
-              <li>
-                <a href="/over-ons">Over ons</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
+        {/* Mobile Menu */}
+        <div className={`fixed inset-0 w-full h-full bg-cream z-40 transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+          <nav className="h-full p-6 pt-28">
+            <ul className="flex flex-col items-center justify-start gap-8 text-charcoal">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-3xl uppercase tracking-[0.1em] font-medium hover:text-rust transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li className="mt-10">
+                <ArrowButton
+                  text="Contact"
+                  href="#contact"
+                  onclick={() => setMobileMenuOpen(false)}
+                />
               </li>
             </ul>
           </nav>
         </div>
       </header>
-    </div>
+    </nav>
   );
 };
 
