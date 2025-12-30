@@ -3,18 +3,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "JeMotion Studio | Kinesitherapie & Osteopathie",
-  description: "Herstel jouw natuurlijke balans. Een holistische benadering van beweging en welzijn. Wij combineren kinesitherapie en osteopathie voor duurzaam herstel.",
-
+  title: "JE Motion Studio | Kinesitherapie & Osteopathie in Gent",
+  description:
+    "Herstel jouw natuurlijke balans. Een holistische benadering van beweging en welzijn. Wij combineren kinesitherapie en osteopathie voor duurzaam herstel.",
+  metadataBase: new URL("https://jemotionstudio.be"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "JeMotion Studio | Kinesitherapie & Osteopathie",
-    description: "Herstel jouw natuurlijke balans. Een holistische benadering van beweging en welzijn.",
+    title: "JE Motion Studio | Kinesitherapie & Osteopathie in Gent",
+    description:
+      "Herstel jouw natuurlijke balans. Een holistische benadering van beweging en welzijn.",
     url: "https://jemotionstudio.be",
-    siteName: "JeMotion Studio",
+    siteName: "JE Motion Studio",
     locale: "nl_BE",
     type: "website",
   },
-
+  twitter: {
+    card: "summary_large_image",
+    title: "JE Motion Studio | Kinesitherapie & Osteopathie in Gent",
+    description:
+      "Herstel jouw natuurlijke balans. Een holistische benadering van beweging en welzijn.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: "/favicon/favicon.ico",
   },

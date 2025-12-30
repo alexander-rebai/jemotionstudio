@@ -284,47 +284,23 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="relative isolate overflow-hidden bg-charcoal py-24 sm:py-32">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2830&q=80&sat=-100"
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20"
-        />
-        <div
-          aria-hidden="true"
-          className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
-        >
-          <div
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-            className="aspect-[1097/845] w-[68.5rem] bg-gradient-to-tr from-rust to-warm opacity-20"
-          />
-        </div>
+      {/* Simple CTA */}
+      <section className="bg-charcoal py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-white">
-              Klaar om te starten?
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-white/80">
-              Neem contact op voor een afspraak of stel je vraag.
-              We helpen je graag verder.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <ArrowButton
-                text="Maak een afspraak"
-                href="#contact"
-                background="#7A3321"
-              />
-              <a
-                href="tel:+3291234567"
-                className="text-sm font-medium text-white hover:text-warm transition-colors"
-              >
-                Bel ons <span aria-hidden="true">&rarr;</span>
-              </a>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-xl font-medium text-white">
+                Klaar om te starten?
+              </h3>
+              <p className="mt-2 text-white/70">
+                Neem contact op voor een afspraak of stel je vraag.
+              </p>
             </div>
+            <ArrowButton
+              text="Maak een afspraak"
+              href="#contact"
+              background="#7A3321"
+            />
           </div>
         </div>
       </section>

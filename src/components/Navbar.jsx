@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import ApplicationLogo from "./ApplicationLogo";
 import ArrowButton from "./ArrowButton";
 
@@ -8,28 +9,30 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#over", label: "Over Ons" },
-    { href: "#diensten", label: "Diensten" },
+    { href: "/", label: "Home" },
+    { href: "/over-ons", label: "Over Ons" },
+    { href: "/diensten", label: "Diensten" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
     <nav className="bg-cream">
       {/* Desktop Header */}
-      <header className="hidden md:flex items-center justify-between px-8 lg:px-16 py-4">
+      <header className="hidden md:flex items-center justify-between px-6 lg:px-8 py-4 max-w-7xl mx-auto">
         <ApplicationLogo height="40px" />
         <ul className="flex items-center gap-10 lg:gap-14">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="text-charcoal-light hover:text-charcoal transition-colors duration-300 uppercase tracking-[0.15em] text-xs font-medium relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-rust after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
-        <ArrowButton text="Contact" href="#contact" />
+        <ArrowButton text="Afspraak" href="/contact" />
       </header>
 
       {/* Mobile Header */}
@@ -68,19 +71,19 @@ const Navbar = () => {
             <ul className="flex flex-col items-center justify-start gap-8 text-charcoal">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-3xl uppercase tracking-[0.1em] font-medium hover:text-rust transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="mt-10">
                 <ArrowButton
-                  text="Contact"
-                  href="#contact"
+                  text="Afspraak"
+                  href="/contact"
                   onclick={() => setMobileMenuOpen(false)}
                 />
               </li>
