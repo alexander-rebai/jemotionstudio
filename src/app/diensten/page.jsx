@@ -102,7 +102,7 @@ export default function Page() {
           id={service.id}
           className={`${
             index % 2 === 0 ? "bg-white" : "bg-cream"
-          } min-h-screen flex flex-col justify-center py-16`}
+          } flex flex-col justify-center py-16 ${index >= 1 ? "min-h-screen" : ""}`}
         >
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div
